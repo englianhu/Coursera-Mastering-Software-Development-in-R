@@ -1,0 +1,123 @@
+---
+title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
+subtitle: "[The R Programming Environment](https://www.coursera.org/learn/r-programming-environment) <img src='figure/jhu.jpg' width='100'>"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/RYO.jpg' width='24'> <img src='figure/RYU.jpg' width='24'> <img src='figure/ENG.jpg' width='24'>®"
+date: "`r lubridate::today('Asia/Tokyo')`"
+output:
+  html_document: 
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+    code_folding: hide
+---
+
+```{r setup}
+suppressPackageStartupMessages(library('BBmisc'))
+
+pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'quantmod', 'qrmtools', 'tidyquant', 'plyr', 'stringr', 'magrittr', 'dplyr', 'tidyverse', 'memoise', 'highcharter', 'formattable', 'DT', 'rugarch', 'ccgarch', 'mgarchBEKK', 'rmgarch')
+
+suppressAll(lib(pkgs))
+
+#funs <- c('')
+#l_ply(funs, function(x) source(paste0('./function/', x)))
+
+options(warn=-1)
+rm(pkgs)
+```
+
+# Introduction
+
+## About this Course
+
+This course provides a rigorous introduction to the R programming language, with a  particular focus on using R for software development in a data science setting. Whether you are part of a data science team or working individually within a community of developers, this course will give you the knowledge of R needed to make useful contributions in those settings. As the first course in the Specialization, the course provides the essential foundation of R needed for the following courses. We cover basic R concepts and language fundamentals, key concepts like tidy data and related "tidyverse" tools, processing and manipulation of complex and large datasets, handling textual data, and basic data science tasks. Upon completing this course, learners will have fluency at the R console and will be able to create tidy datasets from a wide range of possible data sources.
+
+## Syllabus
+
+- Week 1 : Basic R Language
+- Week 2 : Data Manipulation
+- Week 3 : Text Processing, Regular Expression, & Physical Memory
+- Week 4 : Large Datasets
+
+## Useful Reference for R Programming
+
+- [Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222)
+- []()
+
+
+# Data
+
+## Read Data
+
+
+```{r }
+lnk <- 'https://d3c33hcgiwev3.cloudfront.net/_c51e36d1897263b6cfadc7de150f05a1_datasets.zip?Expires=1538697600&Signature=R63JeOjOgKMZuQZh6aXKWTLIHXPNJoE--Zxem6jL6XoNjWGGhXgdX9HDPzRUUNbnlrDTxnrzHehRZZEzv2B5hP2ZlwJljDocWHIlu7mCr09VtF~2Yz4Lyvl7mr9DaFyVdKTBmyxN6KXYtAj9MGZTyNPvixx41XgWc-s2Y-CLEcU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
+
+
+
+```
+
+
+
+# Conclusion
+
+
+```{r option, echo = FALSE}
+## Set options back to original options
+options(warn = 0)
+```
+
+# Appendix
+
+## Documenting File Creation 
+
+It's useful to record some information about how your file was created.
+
+- File creation date: 2018-10-03
+- File latest updated date: `r today('Asia/Tokyo')`
+- `r R.version.string`
+- R version (short form): `r getRversion()`
+- [**rmarkdown** package](https://github.com/rstudio/rmarkdown) version: `r packageVersion('rmarkdown')`
+- File version: 1.0.1
+- Author Profile: [®γσ, Eng Lian Hu](https://beta.rstudioconnect.com/content/3091/ryo-eng.html)
+- GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
+- Additional session information:
+
+```{r info, echo=FALSE, warning=FALSE, results='asis'}
+suppressMessages(require('dplyr', quietly = TRUE))
+suppressMessages(require('formattable', quietly = TRUE))
+suppressMessages(require('knitr', quietly = TRUE))
+suppressMessages(require('kableExtra', quietly = TRUE))
+
+sys1 <- devtools::session_info()$platform %>% 
+  unlist %>% data.frame(Category = names(.), session_info = .)
+rownames(sys1) <- NULL
+
+#sys1 %<>% rbind(., data.frame(
+#  Category = 'Current time', 
+#  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST'))) %>% 
+#  dplyr::filter(Category != 'os')
+
+sys2 <- data.frame(Sys.info()) %>% mutate(Category = rownames(.)) %>% .[2:1]
+names(sys2)[2] <- c('Sys.info')
+rownames(sys2) <- NULL
+
+sys2 %<>% rbind(., data.frame(
+  Category = 'Current time', 
+  Sys.info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
+
+cbind(sys1, sys2) %>% 
+  kable(caption = 'Additional session information:') %>% 
+  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
+
+rm(sys1, sys2)
+```
+
+## Reference
+
+01. 
+02. 
+
+

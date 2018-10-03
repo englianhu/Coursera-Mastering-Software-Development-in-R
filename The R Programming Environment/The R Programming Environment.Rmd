@@ -17,7 +17,7 @@ output:
 ```{r setup}
 suppressPackageStartupMessages(library('BBmisc'))
 
-pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'quantmod', 'qrmtools', 'tidyquant', 'plyr', 'stringr', 'magrittr', 'dplyr', 'tidyverse', 'memoise', 'highcharter', 'formattable', 'DT', 'rugarch', 'ccgarch', 'mgarchBEKK', 'rmgarch')
+pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'quantmod', 'qrmtools', 'tidyquant', 'plyr', 'stringr', 'magrittr', 'dplyr', 'tidyverse', 'memoise', 'highcharter', 'formattable', 'DT')
 
 suppressAll(lib(pkgs))
 
@@ -41,25 +41,36 @@ This course provides a rigorous introduction to the R programming language, with
 - Week 3 : Text Processing, Regular Expression, & Physical Memory
 - Week 4 : Large Datasets
 
-## Useful Reference for R Programming
+[Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222) introduce some useful functions and also packages for R users.
 
-- [Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222)
-- []()
+Kindly refer to [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r) to know the whole courses for the R specialization.
 
+## The Swirl Course Network
+
+`swirl::install_course("The R Programming Environment")`
+
+- http://swirlstats.com/scn/rpe.html
+- https://github.com/swirldev/The_R_Programming_Environment
 
 # Data
 
-## Read Data
+## Get Data
 
+Some of the datasets described in the readings are not easily accessible and so we have made them available for download in this reading. Attached to his reading is a zip file `("datasets.zip")` that contains some of the data referred to in the readings of this course.
 
-```{r }
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+# ---------------- eval=FALSE ------------------------
 lnk <- 'https://d3c33hcgiwev3.cloudfront.net/_c51e36d1897263b6cfadc7de150f05a1_datasets.zip?Expires=1538697600&Signature=R63JeOjOgKMZuQZh6aXKWTLIHXPNJoE--Zxem6jL6XoNjWGGhXgdX9HDPzRUUNbnlrDTxnrzHehRZZEzv2B5hP2ZlwJljDocWHIlu7mCr09VtF~2Yz4Lyvl7mr9DaFyVdKTBmyxN6KXYtAj9MGZTyNPvixx41XgWc-s2Y-CLEcU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
 
-
-
+download.file(lnk, destfile = 'data/datasets.zip')
+unzip('data/datasets.zip')
 ```
 
+## Read Data
 
+```{r, warning=FALSE, message=FALSE}
+team_standing <- read_csv('data/team_standings.csv')
+```
 
 # Conclusion
 

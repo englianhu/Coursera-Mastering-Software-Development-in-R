@@ -17,12 +17,7 @@ output:
 ```{r setup}
 suppressPackageStartupMessages(library('BBmisc'))
 
-<<<<<<< HEAD
 pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'tidyquant', 'stringr', 'magrittr', 'tidyverse', 'plyr', 'dplyr', 'broom', 'highcharter', 'formattable', 'DT', 'httr', 'openxlsx')
-=======
-pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'quantmod', 'qrmtools', 'tidyquant', 'plyr', 'stringr', 'magrittr', 'dplyr', 'tidyverse', 'memoise', 'highcharter', 'formattable', 'DT')
-
->>>>>>> 3b5a87ad2c3507838e3b0ad502f27817fc068b3c
 suppressAll(lib(pkgs))
 
 #funs <- c('')
@@ -100,7 +95,6 @@ Kindly refer to [Mastering Software Development in R Specialization](https://www
 #15: The stringr Package <- ''
 ```
 
-<<<<<<< HEAD
 ## Lesson
 
 Some of the datasets described in the readings are not easily accessible and so we have made them available for download in this reading. Attached to his reading is a zip file `("datasets.zip")` that contains some of the data referred to in the readings of this course.
@@ -108,6 +102,9 @@ Some of the datasets described in the readings are not easily accessible and so 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
 # ---------------- eval=FALSE ------------------------
 lnk <- 'https://d3c33hcgiwev3.cloudfront.net/_c51e36d1897263b6cfadc7de150f05a1_datasets.zip?Expires=1538697600&Signature=R63JeOjOgKMZuQZh6aXKWTLIHXPNJoE--Zxem6jL6XoNjWGGhXgdX9HDPzRUUNbnlrDTxnrzHehRZZEzv2B5hP2ZlwJljDocWHIlu7mCr09VtF~2Yz4Lyvl7mr9DaFyVdKTBmyxN6KXYtAj9MGZTyNPvixx41XgWc-s2Y-CLEcU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
+
+download.file(lnk, destfile = 'data/datasets.zip')
+unzip(zipfile = 'data/datasets.zip', exdir = './data')
 
 lnk2 <- 'https://d3c33hcgiwev3.cloudfront.net/_f018d9fe5547b1a722ce260af0fa71af_quiz_data.zip?Expires=1538784000&Signature=LPxLR-yO3YS-caxtkS7lE5nOM4QQiRWMTiVVvaJZ8jhIY6ydzqHe7UmUcgCj-GiYcxCMEVBHdjRHX4eaa-96fbJSLB0AFYPUZxbRJyBS7SN7c3CHLnEvGyvmvj5qayqb8cib~yvxUhYlj1qdp5Xo874U-u6J0VdqZFfC69xSayo_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
 
@@ -141,9 +138,6 @@ denver %>% slice(1:3)
 #1     DEN     2016-06-01 00:00:00   9.2
 #2     DEN     2016-06-01 00:05:00   9.2
 #3     DEN     2016-06-01 00:10:00   6.9
-
-download.file(lnk, destfile = 'data/datasets.zip')
-unzip('data/datasets.zip')
 ```
 
 | readr function | Use                                           |
@@ -531,10 +525,6 @@ It is always a good idea to examine the relationship between variables with a sc
 
 - [Pearson versus Spearman, Kendall's Tau Correlation Analysis on Structure-Activity Relationships of Biologic Active Compounds](http://ljs.academicdirect.org/A09/179_200.htm) compares 7 correlation methods and all methods are statistical significant (p-value always less than `0.0001`, correlation coefficients always greater than `0.5`).
 
-
-# Data
-
-=======
 [Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222) introduce some useful functions and also packages for R users.
 
 Kindly refer to [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r) to know the whole courses for the R specialization.
@@ -550,22 +540,9 @@ Kindly refer to [Mastering Software Development in R Specialization](https://www
 
 ## Get Data
 
-Some of the datasets described in the readings are not easily accessible and so we have made them available for download in this reading. Attached to his reading is a zip file `("datasets.zip")` that contains some of the data referred to in the readings of this course.
 
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
-# ---------------- eval=FALSE ------------------------
-lnk <- 'https://d3c33hcgiwev3.cloudfront.net/_c51e36d1897263b6cfadc7de150f05a1_datasets.zip?Expires=1538697600&Signature=R63JeOjOgKMZuQZh6aXKWTLIHXPNJoE--Zxem6jL6XoNjWGGhXgdX9HDPzRUUNbnlrDTxnrzHehRZZEzv2B5hP2ZlwJljDocWHIlu7mCr09VtF~2Yz4Lyvl7mr9DaFyVdKTBmyxN6KXYtAj9MGZTyNPvixx41XgWc-s2Y-CLEcU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
-
-download.file(lnk, destfile = 'data/datasets.zip')
-unzip('data/datasets.zip')
-```
-
->>>>>>> 3b5a87ad2c3507838e3b0ad502f27817fc068b3c
 ## Read Data
 
-```{r, warning=FALSE, message=FALSE}
-team_standing <- read_csv('data/team_standings.csv')
-```
 
 # Conclusion
 

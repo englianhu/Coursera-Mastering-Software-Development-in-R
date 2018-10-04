@@ -17,8 +17,7 @@ output:
 ```{r setup}
 suppressPackageStartupMessages(library('BBmisc'))
 
-pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'quantmod', 'qrmtools', 'tidyquant', 'plyr', 'stringr', 'magrittr', 'dplyr', 'tidyverse', 'memoise', 'highcharter', 'formattable', 'DT', 'rugarch', 'ccgarch', 'mgarchBEKK', 'rmgarch')
-
+pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'tidyquant', 'stringr', 'magrittr', 'tidyverse', 'plyr', 'dplyr', 'broom', 'highcharter', 'formattable', 'DT', 'httr', 'openxlsx')
 suppressAll(lib(pkgs))
 
 #funs <- c('')
@@ -34,31 +33,502 @@ rm(pkgs)
 
 This course provides a rigorous introduction to the R programming language, with a  particular focus on using R for software development in a data science setting. Whether you are part of a data science team or working individually within a community of developers, this course will give you the knowledge of R needed to make useful contributions in those settings. As the first course in the Specialization, the course provides the essential foundation of R needed for the following courses. We cover basic R concepts and language fundamentals, key concepts like tidy data and related "tidyverse" tools, processing and manipulation of complex and large datasets, handling textual data, and basic data science tasks. Upon completing this course, learners will have fluency at the R console and will be able to create tidy datasets from a wide range of possible data sources.
 
+Kindly refer to manual [Mastering Software Development in R (web-base)](https://bookdown.org/rdpeng/RProgDA/). (or [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf))
+
 ## Syllabus
 
 - Week 1 : Basic R Language
+  + Welcome
+  + Crash Course on R Syntax
+  + The Importance of Tidy Data
+  + Reading Tabular Data with the readr Package
+  + Reading Web-Based Data
+  + Assignment : 
+    - 1. Swirl: R Basics - Automatic Submission
+    - 2. Swirl: R Basics - Manual Submission
+
 - Week 2 : Data Manipulation
+  + Basic Data Manipulation
+  + Working with Dates, Times, Time Zones
+  + Assignment : 
+    - 1. Swirl: Data Manipulation - Automatic Submission
+    - 2. Swirl: Data Manipulation - Manual Submission
+
 - Week 3 : Text Processing, Regular Expression, & Physical Memory
+  + Text Processing and Regular Expressions
+  + The Role of Physical Memory
+  + Assignment
+    - 1. Swirl: Text and Regular Expressions - Automatic Submission
+    - 2. Swirl: Text and Regular Expressions - Manual Submission
+  
 - Week 4 : Large Datasets
+  + Working with Large Datasets
+  + Diagnosing Problems
+  + Data Manipulation and Summary
 
-## Useful Reference for R Programming
+[Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222) introduce some useful functions and also packages for R users.
 
-- [Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222)
-- []()
+Kindly refer to [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r) to know the whole courses for the R specialization.
+
+## The Swirl Course Network
+
+`swirl::install_course("The R Programming Environment")`
+
+- http://swirlstats.com/scn/rpe.html
+- https://github.com/swirldev/The_R_Programming_Environment
+
+```{r, eval=FALSE}
+# 1: Setting Up Swirl <- 'uYaZJxzcqIQ1y6cKCB4e'
+# 2: Basic Building Blocks <- 'htv8enScWY5qMnuWwNXV'
+# 3: Sequences of Numbers <- 'H8yEkfT49PAQ1qroHCRn'
+# 4: Vectors <- 'nwXVEoJ1smaLlEHl0DIm'
+# 5: Missing Values <- 'nMVLxE9f6vDEIjixH7ZQ'
+# 6: Subsetting Vectors <- 'fBPFjy5E34DWbK51f0qh'
+# 7: Matrices and Data Frames <- 'qGozNYaCJ5f3TdYEKVbn'
+# 8: Logic <- 'r4PQMCG9k2a3RPsIJfHy'
+# 9: Workspace and Files <- 'F1BHKCEnAeirZMc0YCSq'
+#10: Reading Tabular Data <- ''
+#11: Looking at Data <- ''
+#12: Data Manipulation <- ''
+#13: Text Manipulation Functions <- ''
+#14: Regular Expressions <- ''
+#15: The stringr Package <- ''
+```
+
+## Lesson
+
+Some of the datasets described in the readings are not easily accessible and so we have made them available for download in this reading. Attached to his reading is a zip file `("datasets.zip")` that contains some of the data referred to in the readings of this course.
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+# ---------------- eval=FALSE ------------------------
+lnk <- 'https://d3c33hcgiwev3.cloudfront.net/_c51e36d1897263b6cfadc7de150f05a1_datasets.zip?Expires=1538697600&Signature=R63JeOjOgKMZuQZh6aXKWTLIHXPNJoE--Zxem6jL6XoNjWGGhXgdX9HDPzRUUNbnlrDTxnrzHehRZZEzv2B5hP2ZlwJljDocWHIlu7mCr09VtF~2Yz4Lyvl7mr9DaFyVdKTBmyxN6KXYtAj9MGZTyNPvixx41XgWc-s2Y-CLEcU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
+
+lnk2 <- 'https://d3c33hcgiwev3.cloudfront.net/_f018d9fe5547b1a722ce260af0fa71af_quiz_data.zip?Expires=1538784000&Signature=LPxLR-yO3YS-caxtkS7lE5nOM4QQiRWMTiVVvaJZ8jhIY6ydzqHe7UmUcgCj-GiYcxCMEVBHdjRHX4eaa-96fbJSLB0AFYPUZxbRJyBS7SN7c3CHLnEvGyvmvj5qayqb8cib~yvxUhYlj1qdp5Xo874U-u6J0VdqZFfC69xSayo_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
+
+ext_tracks_file <- paste0('http://rammb.cira.colostate.edu/research/', 
+                          'tropical_cyclones/tc_extended_best_track_dataset/', 
+                          'data/ebtrk_atlc_1988_2015.txt')
+
+zika_file <- paste0('https://raw.githubusercontent.com/cdcepi/zika/master/', 
+                    'Brazil/COES_Microcephaly/data/COES_Microcephaly-2016-06-25.csv')
+
+library(httr)
+meso_url <- 'https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py/'
+denver <- GET(url = meso_url, 
+              query = list(station = 'DEN', 
+                           data = 'sped', 
+                           year1 = '2016', 
+                           month1 = '6', 
+                           day1 = '1', 
+                           year2 = '2016', 
+                           month2 = '6', 
+                           day2 = '30', 
+                           tz = 'America/Denver', 
+                           format = 'comma')) %>% 
+  content() %>% 
+  read_csv(skip = 5, na = 'M')
+
+denver %>% slice(1:3)
+# A tibble: 3 × 3
+#      station               valid  sped
+#      <chr>                <dttm> <dbl>
+#1     DEN     2016-06-01 00:00:00   9.2
+#2     DEN     2016-06-01 00:05:00   9.2
+#3     DEN     2016-06-01 00:10:00   6.9
+
+download.file(lnk, destfile = 'data/datasets.zip')
+unzip('data/datasets.zip')
+```
+
+| readr function | Use                                           |
+|:--------------:|:---------------------------------------------:|
+|read_csv	       | Reads comma-separated file                    |
+|read_csv2	     | Reads semicolon-separated file                |
+|read_tsv	       | Reads tab-separated file                      |
+|read_delim	     | General function for reading delimited files  |
+|read_fwf	       | Reads fixed width files                       |
+|read_log	       | Reads log files                               |
+
+| Operator	| Meaning	                   | Example                                |
+|:---------:|:--------------------------:|:--------------------------------------:|
+| ==	      | Equals	                   | storm_name == KATRINA                  |
+| !=	      | Does not equal	           | min_pressure != 0                      |
+| >	        | Greater than	             | latitude > 25                          |
+| >=	      | Greater than or equal to	 | max_wind >= 160                        |
+| <	        | Less than	                 | min_pressure < 900                     |
+| <=	      | Less than or equal to	     | distance_to_land <= 0                  |
+| %in%	    | Included in	               | storm_name %in% c("KATRINA", "ANDREW") |
+| is.na()	  | Is a missing value         | is.na(radius_34_ne)                    |
+
+```{r, eval=FALSE}
+#The mutate function in dplyr can be used to add new columns to a data frame or change existing columns in the data frame. As an example, I’ll use the worldcup dataset from the package faraway, which statistics from the 2010 World Cup. To load this example data frame, you can run:
+library(faraway)
+data(worldcup)
+
+library(tidyr)
+library(ggplot2)
+worldcup %>%
+  select(Position, Time, Shots, Tackles, Saves) %>% 
+  gather(Type, Number, -Position, -Time) %>%
+  ggplot(aes(x = Time, y = Number)) + 
+  geom_point() + 
+  facet_grid(Type ~ Position)
+
+library(knitr)
+
+# Summarize the data to create the summary statistics you want
+wc_table <- worldcup %>% 
+  filter(Team %in% c("Spain", "Netherlands", "Uruguay", "Germany")) %>%
+  select(Team, Position, Passes) %>%
+  group_by(Team, Position) %>%
+  summarize(ave_passes = mean(Passes),
+            min_passes = min(Passes),
+            max_passes = max(Passes),
+            pass_summary = paste0(round(ave_passes), " (", 
+                                  min_passes, ", ",
+                                  max_passes, ")")) %>%
+  select(Team, Position, pass_summary)
+# What the data looks like before using `spread`
+wc_table
+
+Source: local data frame [16 x 3]
+Groups: Team [4]
+
+          Team   Position   pass_summary
+        <fctr>     <fctr>          <chr>
+1      Germany   Defender  190 (44, 360)
+2      Germany    Forward    90 (5, 217)
+3      Germany Goalkeeper    99 (99, 99)
+4      Germany Midfielder   177 (6, 423)
+5  Netherlands   Defender  182 (30, 271)
+6  Netherlands    Forward   97 (12, 248)
+7  Netherlands Goalkeeper 149 (149, 149)
+8  Netherlands Midfielder  170 (22, 307)
+9        Spain   Defender   213 (1, 402)
+10       Spain    Forward   77 (12, 169)
+11       Spain Goalkeeper    67 (67, 67)
+12       Spain Midfielder  212 (16, 563)
+13     Uruguay   Defender   83 (22, 141)
+14     Uruguay    Forward   100 (5, 202)
+15     Uruguay Goalkeeper    75 (75, 75)
+16     Uruguay Midfielder   100 (1, 252)
+
+# Use spread to create a prettier format for a table
+wc_table %>%
+  spread(Position, pass_summary) %>%
+  kable()
+```
+
+| Team	      | Defender	     | Forward	    | Goalkeeper	    | Midfielder     |
+|:-----------:|:--------------:|:------------:|:---------------:|:--------------:|
+|Germany	    | 190 (44, 360)	 | 90 (5, 217)	| 99 (99, 99)	    | 177 (6, 423)   |
+|Netherlands  |	182 (30, 271)	 | 97 (12, 248)	| 149 (149, 149)	| 170 (22, 307)  |
+|Spain	      | 213 (1, 402)	 | 77 (12, 169)	| 67 (67, 67)	    | 212 (16, 563)  |
+|Uruguay      |	83 (22, 141)	 | 100 (5, 202)	| 75 (75, 75)	    | 100 (1, 252)   |
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+#teams <- read_csv('data/team_standings.csv')
+team_standings <- read_csv('data/team_standings.csv')
+left_join(world_cup, team_standings, by = 'Team')
+
+worldcup %>% 
+  mutate(Name = rownames(worldcup),
+         Team = as.character(Team)) %>%
+  select(Name, Position, Shots, Team) %>%
+  arrange(desc(Shots)) %>%
+  slice(1:5) %>%
+  left_join(team_standings, by = "Team") %>% # Merge in team standings
+  rename("Team Standing" = Standing) %>%
+  kable()
+```
+
+| Name	 | Position	  | Shots	| Team	    | Team Standing   |
+|:------:|:----------:|:-----:|:---------:|:---------------:|
+| Gyan	 | Forward	  | 27	  | Ghana	    | 7               |
+| Villa	 | Forward	  | 22	  | Spain	    | 1               |
+| Messi	 | Forward	  | 21	  | Argentina	| 5               |
+| Suarez | Forward	  | 19	  | Uruguay	  | 4               |
+| Forlan | Forward	  | 18	  | Uruguay	  | 4               |
+
+## Quiz
+
+```{r}
+## https://jeevanyue.github.io/post/2018-01-08-read_data_in_r/
+if(!file.exists('data/daily_SPEC_2014.csv')) unzip(zipfile = 'data/daily_SPEC_2014.zip', exdir = './data')
+
+pth <- ifelse(dir.exists('The R Programming Environment'), 
+              file.path('The R Programming Environment', 'data'), 
+              file.path('data'))
+lf <- list.files(pth, pattern = '.xlsx$|.csv$')
+
+Qz <- llply(lf, function(x) {
+    if(grepl('.csv$', x)) {
+        fread(paste0(pth, '/', x)) %>% tbl_df
+    } else {
+        read.xlsx(paste0(pth, '/', x)) %>% tbl_df
+    }
+  })
+names(Qz) <- lf %>% str_replace_all('\\.[a-z]{3,4}$', '')
+
+Qzdf <- Qz$`daily_SPEC_2014` %>% 
+  ddply(.(`State Name`, `Parameter Name`), summarize, 
+        AM = mean(`Arithmetic Mean`, na.rm = TRUE)) %>% 
+  tbl_df
+
+file.remove('data/daily_SPEC_2014.csv')
+```
+
+### Q1
+
+```{r}
+## Question 1
+Q1 <- Qzdf %>% 
+  dplyr::filter(`State Name` == 'Wisconsin' & 
+                `Parameter Name` == 'Bromine PM2.5 LC')
+Q1
+```
+
+### Q2
+
+```{r}
+## Question 2
+Q2 <- Qzdf %>% 
+  dplyr::filter(`Parameter Name` == 'EC2 PM2.5 LC'|
+                `Parameter Name` == 'Sodium PM2.5 LC'|
+                `Parameter Name` == 'Sulfur PM2.5 LC'|
+                `Parameter Name` == 'OC CSN Unadjusted PM2.5 LC TOT') %>% 
+  tbl_df %>% 
+  arrange(desc(AM))
+Q2
+```
+
+### Q3
+
+```{r}
+## Question 3
+Q3 <- Qz$`daily_SPEC_2014` %>% 
+    ddply(.(`State Code`, `County Code`, `Site Num`, `Parameter Name`), 
+          summarize, AM = mean(`Arithmetic Mean`, na.rm = TRUE)) %>% 
+    tbl_df
+Q3 %<>% dplyr::filter(`Parameter Name` == 'Sulfate PM2.5 LC') %>% 
+  tbl_df %>% 
+  arrange(desc(AM))
+Q3
+```
+
+### Q4
+
+```{r}
+## Question 4
+Q4 <- Qz$`daily_SPEC_2014` %>% 
+    ddply(.(`State Name`, `Parameter Name`), 
+          summarize, AM = mean(`Arithmetic Mean`, na.rm = TRUE)) %>% 
+    tbl_df
+Q4 %<>% dplyr::filter(
+  (`State Name` == 'California' | `State Name` == 'Arizona') & 
+  `Parameter Name` == 'EC PM2.5 LC TOR') %>% 
+  tbl_df %>% 
+  arrange(desc(AM))
+Q4
+
+## highest - secondary
+Q4$AM[1] - Q4$AM[2]
+```
+
+### Q5
+
+```{r}
+## Question 5
+Q5 <- Qz$`daily_SPEC_2014` %>% dplyr::filter(
+    Longitude < -100 & `Parameter Name` == 'OC PM2.5 LC TOR') %>% 
+    tbl_df
+
+median(Q5$`Arithmetic Mean`, na.rm = TRUE)
+```
+
+### Q6
+
+```{r}
+## Question 6
+Q6 <- Qz$`aqs_sites`
+Q6 %<>% dplyr::count(Land.Use, Location.Setting) %>% 
+  dplyr::filter(Land.Use == 'RESIDENTIAL' & Location.Setting == 'SUBURBAN')
+Q6
+```
+
+### Q7
+
+```{r}
+## Question 7
+Qz7 <- left_join(Qz$`aqs_sites`, Qz$`daily_SPEC_2014`)
+Q7 <- Qz7 %>% 
+    dplyr::filter(Longitude >= -100 & `Parameter Name` == 'EC PM2.5 LC TOR' & 
+                  Land.Use == 'RESIDENTIAL' & Location.Setting == 'SUBURBAN') %>% 
+    .$`Arithmetic Mean` %>% median(na.rm = TRUE)
+Q7
+```
+
+### Q8
+
+```{r}
+## Question 8
+Q8 <- Qz7 %>% 
+    dplyr::filter(`Parameter Name` == 'Sulfate PM2.5 LC' & 
+                  Land.Use == 'COMMERCIAL')
+Q8 %<>% mutate(month = lubridate::month(ymd(`Date Local`))) %>% 
+    select(month, `Arithmetic Mean`) %>% 
+    ddply(.(month), summarize, `Arithmetic Mean` = mean(`Arithmetic Mean`, na.rm=TRUE)) %>% 
+    arrange(desc(`Arithmetic Mean`))
+Q8
+```
+
+### Q9
+
+```{r}
+## Question 9
+Q9 <- Qz7 %>% 
+    dplyr::filter((`Parameter Name` == 'Sulfate PM2.5 LC' | 
+                   `Parameter Name` == 'Total Nitrate PM2.5 LC') & 
+                   State.Code == 6 & County.Code == 65 & 
+                   Site.Number == 8001)
+
+Q9 %<>% mutate(`Date Local` = ymd(`Date Local`)) %>% 
+    select(`Date Local`, `Arithmetic Mean`) %>% 
+    ddply(.(`Date Local`), summarize, 
+          `Arithmetic Mean` = sum(`Arithmetic Mean`, na.rm=TRUE)) %>% 
+    dplyr::filter(`Arithmetic Mean` > 10) %>% tbl_df
+Q9 #nrow(Q9) = 37
+```
+
+### Q10
+
+```{r}
+## Question 10
+Q10 <- Qz7 %>% 
+    dplyr::filter(`Parameter Name` == 'Sulfate PM2.5 LC' | 
+                   `Parameter Name` == 'Total Nitrate PM2.5 LC')
+
+Q10 %<>% ddply(.(State.Code, County.Code, Site.Number, `Parameter Name`), 
+               summarize, 
+               `Arithmetic Mean` = mean(`Arithmetic Mean`, na.rm=TRUE)) %>% 
+    tbl_df
+Q10 %<>% spread(`Parameter Name`, `Arithmetic Mean`)
+
+## In order to know all possible correlation methods and dataset used, here I simulate all possible options.
+use <- c('everything', 'all.obs', 'complete.obs', 'na.or.complete', 'pairwise.complete.obs')
+method <- c('pearson', 'kendall', 'spearman')
+
+corr <- llply(use, function(x) {
+  llply(method, function(y) {
+    Q10 %>% mutate(
+      use = x, method = y, 
+      corr = tryCatch(cor(`Sulfate PM2.5 LC`, `Total Nitrate PM2.5 LC`, 
+                          use = x, method = y), error=function(e) NA))
+    }) %>% bind_rows
+  }) %>% bind_rows
+corr
+
+## Filter all correlation possibilities.
+sumr <- corr %>% na.omit %>% 
+    dplyr::select(use, method, corr) %>% unique
+sumr
+
+## Here I compare the correlation methods.
+sapply(method, function(x) {
+    xx <- na.omit(corr)
+    suppressWarnings(cor.test(
+        xx$`Sulfate PM2.5 LC`, 
+        xx$`Total Nitrate PM2.5 LC`, 
+        method = x))
+})
+
+## tidy data
+llply(method, function(x) {
+    xx <- na.omit(corr)
+    suppressWarnings(cor.test(
+        xx$`Sulfate PM2.5 LC`, 
+        xx$`Total Nitrate PM2.5 LC`, 
+        method = x)) %>% broom::tidy()
+}) %>% bind_rows
+
+```
+
+```{r}
+Q10B <- corr %>% na.omit %>% 
+  dplyr::select(-`Sulfate PM2.5 LC`, -`Total Nitrate PM2.5 LC`) %>% 
+  tbl_df %>% unique %>% 
+  dplyr::filter(State.Code %in% c(2,5,16,42) & 
+                County.Code %in% c(37,45,90,113) & 
+                Site.Number %in% c(2,3,35)) %>% 
+  arrange(desc(corr))
+Q10B %>% ddply(.(method), head, corr = corr, 1)
+```
+
+- [Correlations](https://www.statmethods.net/stats/correlations.html)
+- [Correlation and Regression with R](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression_print.html)
+- [Correlation (Pearson, Kendall, Spearman)](http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/)
+
+**Pearson r correlation**: Pearson r correlation is the most widely used correlation statistic to measure the degree of the relationship between linearly related variables.  For example, in the stock market, if we want to measure how two stocks are related to each other, Pearson r correlation is used to measure the degree of relationship between the two.  The point-biserial correlation is conducted with the Pearson correlation formula except that one of the variables is dichotomous.  The following formula is used to calculate the Pearson r correlation:
+
+pearson r correlation
+
+r = Pearson r correlation coefficient
+N = number of observations
+∑xy = sum of the products of paired scores
+∑x = sum of x scores
+∑y = sum of y scores
+∑x2= sum of squared x scores
+∑y2= sum of squared y scores
+
+Types of research questions a Pearson correlation can examine:
+
+- Is there a statistically significant relationship between age, as measured in years, and height, measured in inches?
+- Is there a relationship between temperature, measured in degrees Fahrenheit, and ice cream sales, measured by income?
+- Is there a relationship between job satisfaction, as measured by the JSS, and income, measured in dollars?
+
+**Kendall rank correlation**: Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.  If we consider two samples, a and b, where each sample size is n, we know that the total number of pairings with a b is `n(n-1)/2`.  The following formula is used to calculate the value of Kendall rank correlation:
+
+kendall rank correlation
+
+Nc= number of concordant
+Nd= Number of discordant
+
+**Spearman rank correlation**: Spearman rank correlation is a non-parametric test that is used to measure the degree of association between two variables.  The Spearman rank correlation test does not carry any assumptions about the distribution of the data and is the appropriate correlation analysis when the variables are measured on a scale that is at least ordinal.
+
+The following formula is used to calculate the Spearman rank correlation:
+
+spearman rank correlation
+
+ρ= Spearman rank correlation
+di= the difference between the ranks of corresponding variables
+n= number of observations
+
+Types of research questions a Spearman Correlation can examine:
+
+- Is there a statistically significant relationship between participants’ level of education (high school, bachelor’s, or graduate degree) and their starting salary?
+- Is there a statistically significant relationship between horse’s finishing position a race and horse’s age?
+
+- [Which correlation coefficient is better to use: Spearman or Pearson?](https://www.researchgate.net/post/Which_correlation_coefficient_is_better_to_use_Spearman_or_Pearson) : The Pearson correlation coefficient is the most widely used. It measures the strength of the linear relationship between normally distributed variables. When the variables are not normally distributed or the relationship between the variables is not linear, it may be more appropriate to use the Spearman rank correlation method.
+- [A comparison of the Pearson and Spearman correlation methods](https://support.minitab.com/en-us/minitab-express/1/help-and-how-to/modeling-statistics/regression/supporting-topics/basics/a-comparison-of-the-pearson-and-spearman-correlation-methods/)
+
+**Pearson product moment correlation**
+The Pearson correlation evaluates the linear relationship between two continuous variables. A relationship is linear when a change in one variable is associated with a proportional change in the other variable.
+
+For example, you might use a Pearson correlation to evaluate whether increases in temperature at your production facility are associated with decreasing thickness of your chocolate coating.
+
+**Spearman rank-order correlation**
+The Spearman correlation evaluates the monotonic relationship between two continuous or ordinal variables. In a monotonic relationship, the variables tend to change together, but not necessarily at a constant rate. The Spearman correlation coefficient is based on the ranked values for each variable rather than the raw data.
+
+Spearman correlation is often used to evaluate relationships involving ordinal variables. For example, you might use a Spearman correlation to evaluate whether the order in which employees complete a test exercise is related to the number of months they have been employed.
+
+It is always a good idea to examine the relationship between variables with a scatterplot. Correlation coefficients only measure linear (Pearson) or monotonic (Spearman) relationships. Other relationships are possible.
+
+- [Pearson versus Spearman, Kendall's Tau Correlation Analysis on Structure-Activity Relationships of Biologic Active Compounds](http://ljs.academicdirect.org/A09/179_200.htm) compares 7 correlation methods and all methods are statistical significant (p-value always less than `0.0001`, correlation coefficients always greater than `0.5`).
 
 
 # Data
 
 ## Read Data
-
-
-```{r }
-lnk <- 'https://d3c33hcgiwev3.cloudfront.net/_c51e36d1897263b6cfadc7de150f05a1_datasets.zip?Expires=1538697600&Signature=R63JeOjOgKMZuQZh6aXKWTLIHXPNJoE--Zxem6jL6XoNjWGGhXgdX9HDPzRUUNbnlrDTxnrzHehRZZEzv2B5hP2ZlwJljDocWHIlu7mCr09VtF~2Yz4Lyvl7mr9DaFyVdKTBmyxN6KXYtAj9MGZTyNPvixx41XgWc-s2Y-CLEcU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A'
-
-
-
-```
-
 
 
 # Conclusion
@@ -117,7 +587,4 @@ rm(sys1, sys2)
 
 ## Reference
 
-01. 
-02. 
-
-
+01. [Mastering Software Development in R (web-base)](https://bookdown.org/rdpeng/RProgDA/). (or [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf))

@@ -5,6 +5,7 @@
 > 
 > - https://github.com/englianhu/binary.com-interview-question (quantitative analyst)
 > - https://beta.rstudioconnect.com/content/3091/ryo-eng.html
+> - https://www.coursera.org/learn/advanced-r/home/info
 > 
 > As you can know from my CV, I used to appy couples of jobs in data science or quantitive analysis regions but no even get feedback without any background in that particular industry. I finally get chance for assessment to join as data scientist or quantitative analyst upon completion few courseses in Coursera. I need to self improve in order to meet the requirement. I do thousands of thankful to Coursera if you are willing to give me the chance.
 
@@ -16,6 +17,10 @@
 > - https://github.com/englianhu/binary.com-interview-question (quantitative analyst)
 > 
 > Due to I faced a lot of unfair treatment when I switched a lot of jobs since 2012 resigned from Scicom (Msc) Bhd, almost all following jobs with low paid but long working hours. Therefore I cannot safe money but just affort for standard living expense. Now I have no even 1 cent income since few months ago resigned from Cambodia and get back to Malaysia. I used to tender CV to hundreds company for data scientist / quantitative analyst position within these few years but almost no 1 replied. Therefore I cannot get a job and no income, therefore I appeal to apply for financial aids from Coursera.org.
+> 
+> I hope I can complete whole specialization in R and share with others.
+> 
+> - https://www.coursera.org/specializations/r
 
 **Help Us Improve**
 

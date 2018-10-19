@@ -70,6 +70,8 @@ Kindly refer to manual [Mastering Software Development in R (web-base)](https://
 
 Kindly refer to [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r) to know the whole courses for the R specialization.
 
+# The Swirl Course
+
 ## The Swirl Course Network
 
 `swirl::install_course("The R Programming Environment")`
@@ -87,12 +89,12 @@ Kindly refer to [Mastering Software Development in R Specialization](https://www
 # 7: Matrices and Data Frames <- 'qGozNYaCJ5f3TdYEKVbn'
 # 8: Logic <- 'r4PQMCG9k2a3RPsIJfHy'
 # 9: Workspace and Files <- 'F1BHKCEnAeirZMc0YCSq'
-#10: Reading Tabular Data <- ''
-#11: Looking at Data <- ''
-#12: Data Manipulation <- ''
-#13: Text Manipulation Functions <- ''
-#14: Regular Expressions <- ''
-#15: The stringr Package <- ''
+#10: Reading Tabular Data <- 'B8Y4eKmHny5uivnpYJ05'
+#11: Looking at Data <- 'katPyvJxaPMD1q8Ug6EF'
+#12: Data Manipulation <- 'NopXxlF40CchYURJEbVg'
+#13: Text Manipulation Functions <- 'uv2hFE4U3wjdMRfHVGY0'
+#14: Regular Expressions <- 'Djrf113sbiWxZTfg7Vek'
+#15: The stringr Package <- 'mixvNacXgbIdBnzauoNt'
 ```
 
 ## Lesson
@@ -536,16 +538,11 @@ Kindly refer to [Mastering Software Development in R Specialization](https://www
 - http://swirlstats.com/scn/rpe.html
 - https://github.com/swirldev/The_R_Programming_Environment
 
-# Data
-
-## Get Data
-
-
-## Read Data
-
-
 # Conclusion
 
+Final Scores : `95/100`
+
+![*Source :* [*The R Programming Environment*](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/tree/master/The%20R%20Programming%20Environment/Coursera%2001%20The%20R%20Programming%20Environment.pdf)](figure/certificate.jpg)
 
 ```{r option, echo = FALSE}
 ## Set options back to original options
@@ -587,9 +584,15 @@ sys2 <- data.frame(Sys.info()) %>% mutate(Category = rownames(.)) %>% .[2:1]
 names(sys2)[2] <- c('Sys.info')
 rownames(sys2) <- NULL
 
-sys2 %<>% rbind(., data.frame(
+if (nrow(sys1) == 7 & nrow(sys2) == 8) {
+  sys1 %<>% rbind(., data.frame(
+  Category = 'Current time', 
+  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
+} else {
+  sys2 %<>% rbind(., data.frame(
   Category = 'Current time', 
   Sys.info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
+}
 
 cbind(sys1, sys2) %>% 
   kable(caption = 'Additional session information:') %>% 

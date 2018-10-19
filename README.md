@@ -4,7 +4,7 @@
 
 Specialization : [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r)
 
-- Course 1 : The R Programming Environment
+- Course 1 : [The R Programming Environment](http://rpubs.com/englianhu/the-r-programming-environment)
 - Course 2 : Advanced R Programming
 - Course 3 : Building R Packages
 - Course 4 : Building Data Visualization Tools

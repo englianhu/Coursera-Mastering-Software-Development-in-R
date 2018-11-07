@@ -103,14 +103,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -154,9 +214,27 @@ $(document).ready(function () {
 </div>
 <div id="course-2-advanced-r-programming" class="section level2">
 <h2>Course 2 : Advanced R Programming</h2>
+<ul>
+<li>Week 1 : Welcome to Advanced R Programming</li>
+<li>Week 2 : Functional Programming</li>
+<li>Week 3 : Debugging and Profiling</li>
+<li>Week 4 : Object-Oriented Programming</li>
+</ul>
+<p><code>swirl::install_course(&quot;Advanced R Programming&quot;)</code></p>
+<ul>
+<li><a href="http://swirlstats.com/scn/arp.html" class="uri">http://swirlstats.com/scn/arp.html</a></li>
+<li><a href="https://github.com/swirldev/Advanced_R_Programming" class="uri">https://github.com/swirldev/Advanced_R_Programming</a></li>
+</ul>
 </div>
 <div id="course-3-building-r-packages" class="section level2">
 <h2>Course 3 : Building R Packages</h2>
+<ul>
+<li>Week 1 : Getting Started with R Packages</li>
+<li>Week 2 : Documentation and Testing</li>
+<li>Week 3 : Licensing, Version Control, and Software Design</li>
+<li>Week 4 : Continuous Integration and Cross Platform Development</li>
+</ul>
+<p>Kindly refer to <a href="https://github.com/englianhu/farsdata">The <code>farsdata</code> R Package</a> which is my R package repo for the assignment.</p>
 </div>
 <div id="course-4-building-data-visualization-tools" class="section level2">
 <h2>Course 4 : Building Data Visualization Tools</h2>

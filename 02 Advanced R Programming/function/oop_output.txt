@@ -1,0 +1,65 @@
+## Read in the data
+library(readr)
+library(magrittr)
+source('function/oop_code.R')
+
+data <- read_csv('data/MIE.csv')
+## Parsed with column specification:
+## cols(
+##   id = col_integer(),
+##   visit = col_integer(),
+##   room = col_character(),
+##   value = col_double(),
+##   timepoint = col_integer()
+## )
+
+x <- make_LD(data)
+print(class(x))
+## [1] "LongitudinalData"
+
+print(x)
+## Longitudinal dataset with 10 subjects
+
+## Subject 10 doesn't exist
+out <- subject(x, 10)
+print(out)
+## NULL
+
+out <- subject(x, 14)
+print(out)
+## Subject ID: 14
+
+out <- subject(x, 54) %>% summary
+print(out)
+## ID: 54 
+##   visit  bedroom       den living room    office
+## 1     0       NA        NA    2.792601 13.255475
+## 2     1       NA 13.450946          NA  4.533921
+## 3     2 4.193721  3.779225          NA        NA
+
+out <- subject(x, 14) %>% summary
+print(out)
+## ID: 14 
+##   visit   bedroom family  room living room
+## 1     0  4.786592           NA     2.75000
+## 2     1  3.401442     8.426549          NA
+## 3     2 18.583635           NA    22.55069
+
+out <- subject(x, 44) %>% visit(0) %>% room("bedroom")
+print(out)
+## ID: 44 
+## Visit: 0 
+## Room: bedroom
+
+## Show a summary of the pollutant values
+out <- subject(x, 44) %>% visit(0) %>% room("bedroom") %>% summary
+print(out)
+## ID: 44 
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    8.00   31.00   49.00   85.33   74.00 1775.00
+
+out <- subject(x, 44) %>% visit(1) %>% room("living room") %>% summary
+print(out)
+## ID: 44 
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    2.75   15.00   24.00   40.34   39.00 1607.00

@@ -26,7 +26,24 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 
 ## Course 2 : Advanced R Programming
 
+- Week 1 : Welcome to Advanced R Programming
+- Week 2 : Functional Programming
+- Week 3 : Debugging and Profiling
+- Week 4 : Object-Oriented Programming
+
+`swirl::install_course("Advanced R Programming")`
+
+- http://swirlstats.com/scn/arp.html
+- https://github.com/swirldev/Advanced_R_Programming
+
 ## Course 3 : Building R Packages
+
+- Week 1 : Getting Started with R Packages
+- Week 2 : Documentation and Testing
+- Week 3 : Licensing, Version Control, and Software Design
+- Week 4 : Continuous Integration and Cross Platform Development
+
+Kindly refer to [The `farsdata` R Package](https://github.com/englianhu/farsdata) which is my R package repo for the assignment.
 
 ## Course 4 : Building Data Visualization Tools
 

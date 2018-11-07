@@ -1,86 +1,81 @@
-====== PART 1: Performance and comparison of indivudual input values ======
-======================== across factorial functions ======================= 
-
-$`0`
-Unit: nanoseconds
-                expr min lq   mean median uq   max neval cld
-   factorial_loop(.)   0  0  66.86      0  0  3079   100   a
- factorial_reduce(.)   0  0 148.97      0  0 11290   100   a
-   factorial_func(.)   0  0  66.92      0  1  2053   100   a
-    factorial_mem(.)   0  0 246.53      0  1 17961   100   a
-
+---------First:Performance and comparison of indivudual input values--------
 $`1`
 Unit: nanoseconds
-                expr    min       lq      mean median       uq    max neval cld
-   factorial_loop(.)      0      0.5    636.48    514   1026.0   2566   100  a 
- factorial_reduce(.) 131888 145231.0 156372.00 147284 153698.5 360254   100   b
-   factorial_func(.)    513   1026.0   1365.29   1539   1540.0   4619   100  a 
-    factorial_mem(.)    513   1026.0   2037.55   2053   2566.0  28739   100  a 
+                expr   min    lq     mean median      uq    max neval
+   factorial_loop(.)   934  1867  2604.12   1867  2800.0  30790   100
+ factorial_reduce(.) 19594 21460 24455.54  21461 22393.0 125026   100
+   factorial_func(.)     1   934  1297.93    934   934.5  14929   100
+    factorial_mem(.)   934  1867  2949.37   2800  2800.0  27992   100
 
-$`6`
+$`5`
 Unit: nanoseconds
-                expr    min       lq      mean   median       uq    max neval cld
-   factorial_loop(.)    513    514.0   1390.92   1283.0   2053.0   7185   100  a 
- factorial_reduce(.) 150363 153698.5 163802.95 156008.0 162422.5 374624   100   b
-   factorial_func(.)   3079   3592.0   4485.46   4618.0   5132.0  25659   100  a 
-    factorial_mem(.)    513   1026.0   1924.55   2052.5   2566.0  21041   100  a 
+                expr   min    lq     mean median      uq    max neval
+   factorial_loop(.)  1867  2800  3098.63   2800  3733.0  11197   100
+ factorial_reduce(.) 28924 29858 35353.25  30791 32656.5 144620   100
+   factorial_func(.)  1867  2800  3975.72   3733  4666.0  14929   100
+    factorial_mem(.)   934  1867  3537.23   2800  3733.0  69045   100
 
-$`11`
+$`10`
+Unit: microseconds
+                expr    min     lq     mean median      uq     max neval
+   factorial_loop(.)  1.867  2.800  6.10301  3.733  3.7330 252.850   100
+ factorial_reduce(.) 35.456 37.322 40.51288 38.255 39.6545 109.165   100
+   factorial_func(.)  1.867  2.800  3.68645  3.733  3.7340  11.197   100
+    factorial_mem(.)  1.867  1.867  3.68648  2.800  3.7330  72.777   100
+
+$`30`
 Unit: nanoseconds
-                expr    min     lq      mean median     uq    max neval cld
-   factorial_loop(.)    513   1027   2386.49   2053   2567  25660   100  a 
- factorial_reduce(.) 158060 164732 196815.95 173456 205786 503432   100   b
-   factorial_func(.)   5645   6671   8339.42   7698   8724  47213   100  a 
-    factorial_mem(.)    513   1027   2386.49   2053   3079  19501   100  a 
+                expr    min     lq      mean median       uq    max neval
+   factorial_loop(.)   4666   5599   7399.90   6533   8398.0  37322   100
+ factorial_reduce(.) 262181 269645 285058.19 273377 279907.5 858383   100
+   factorial_func(.)   1867   2800   4852.72   4666   6532.0  13996   100
+    factorial_mem(.)    934   2800   4656.78   4200   5599.0  73710   100
 
-$`13`
-Unit: nanoseconds
-                expr    min     lq      mean   median     uq    max neval cld
-   factorial_loop(.)    513   1027   2247.92   2052.5   3079  28738   100  a 
- factorial_reduce(.) 256591 263262 279977.21 265829.0 268908 669704   100   b
-   factorial_func(.)   6158   7185   9730.15   8725.0   9750 109822   100  a 
-    factorial_mem(.)    513   1026   2581.45   2309.5   2823  25146   100  a 
+$`60`
+Unit: microseconds
+                expr     min      lq      mean  median       uq     max neval
+   factorial_loop(.)   9.331   9.798  11.17864  11.197  12.1300  18.662   100
+ factorial_reduce(.) 308.831 314.430 330.65504 319.095 323.2935 881.708   100
+   factorial_func(.)   2.800   3.733   5.44987   5.599   6.5330  13.063   100
+    factorial_mem(.)   1.867   2.800   5.26324   4.666   5.5990 112.897   100
 
-$`45`
-Unit: nanoseconds
-                expr    min       lq      mean   median       uq    max neval cld
-   factorial_loop(.)   2052   2566.0   3474.47   3592.0   4106.0   6671   100 a  
- factorial_reduce(.) 268908 286612.5 312035.77 294053.5 309192.5 550132   100   c
-   factorial_func(.)  21553  24633.0  27506.74  27198.5  28225.0  62609   100  b 
-    factorial_mem(.)    513   1026.0   2991.99   2566.0   3079.0  79543   100 a  
-
-$`63`
-Unit: nanoseconds
-                expr    min       lq      mean   median       uq    max neval cld
-   factorial_loop(.)   3079   3592.0   4341.69   4105.0   5132.0   7184   100 a  
- factorial_reduce(.) 303292 311758.5 334502.86 316634.0 331003.0 550132   100   c
-   factorial_func(.)  33870  35410.0  39638.42  38488.5  39002.5 141639   100  b 
-    factorial_mem(.)    513   1027.0   2376.24   2053.0   3079.0  31817   100 a  
-
-====== PART 2: Performance and comparison of ranges of input values =======
-======================== across factorial functions ======================= 
-
+---------Second:Performance and comparison of ranges of input values--------
 $`range 1:10`
 Unit: microseconds
-                         expr      min        lq       mean    median       uq      max neval cld
-   map_dbl(x, factorial_loop)   41.568   44.1340   52.37564   46.9565   56.450  295.080   100  a 
- map_dbl(x, factorial_reduce) 1505.165 1558.0230 1709.52447 1596.2550 1667.843 3887.871   100   b
-   map_dbl(x, factorial_func)   67.227   70.0495   80.52363   73.8980   83.136  234.524   100  a 
-    map_dbl(x, factorial_mem)   44.134   46.7000   54.10511   48.7530   54.910  184.746   100  a 
+                         expr     min      lq     mean   median       uq     max
+   map_dbl(x, factorial_loop) 134.356 137.156 142.5669 140.8880 144.6200 185.672
+ map_dbl(x, factorial_reduce) 416.129 422.660 447.7774 429.1915 437.5890 800.534
+   map_dbl(x, factorial_func) 137.155 139.955 148.7062 143.6865 148.3520 311.631
+    map_dbl(x, factorial_mem) 132.490 136.222 144.4144 139.0210 143.2205 343.354
+ neval
+   100
+   100
+   100
+   100
 
-$`range 1:50`
+$`range 1:20`
 Unit: microseconds
-                         expr       min        lq       mean    median         uq       max neval  cld
-   map_dbl(x, factorial_loop)  2383.734  2553.597  2805.8314  2614.666  2732.6975 11919.693   100   c 
- map_dbl(x, factorial_reduce) 12331.265 12898.845 13903.2980 13331.972 13889.2880 26333.967   100    d
-   map_dbl(x, factorial_func)   734.877   783.117   926.4283   803.644   835.2045  9872.608   100  b  
-    map_dbl(x, factorial_mem)   107.255   124.447   147.7148   135.224   143.9480   970.942   100 a   
+                         expr      min        lq      mean   median        uq
+   map_dbl(x, factorial_loop)  190.338  200.6010  222.5550  210.864  229.9910
+ map_dbl(x, factorial_reduce) 2514.498 2632.5250 2784.5148 2693.639 2857.8500
+   map_dbl(x, factorial_func)  183.806  195.4695  221.1088  204.800  227.1925
+    map_dbl(x, factorial_mem)  174.477  185.2060  208.8489  193.603  218.3285
+      max neval
+  390.005   100
+ 4136.092   100
+  494.503   100
+  475.842   100
 
-$`range 1:100`
+$`range 1:70`
 Unit: microseconds
-                         expr       min        lq       mean    median         uq      max neval  cld
-   map_dbl(x, factorial_loop)  5736.869  6071.463  6568.4813  6208.997  6574.6390 15640.78   100   c 
- map_dbl(x, factorial_reduce) 28345.130 29326.078 31406.6184 30050.949 31206.3795 43289.01   100    d
-   map_dbl(x, factorial_func)  2808.135  3014.691  3212.9135  3077.043  3156.3295 12102.90   100  b  
-    map_dbl(x, factorial_mem)   173.456   209.122   238.8149   224.261   247.6105   694.85   100 a   
+                         expr       min         lq       mean     median        uq
+   map_dbl(x, factorial_loop)   638.189   660.1150   716.0681   679.2420   738.022
+ map_dbl(x, factorial_reduce) 17299.179 17782.0185 18631.6576 18060.9925 18499.513
+   map_dbl(x, factorial_func)   396.536   411.9305   483.6334   427.3255   489.838
+    map_dbl(x, factorial_mem)   356.416   368.5450   495.8561   384.4065   449.718
+       max neval
+  1447.119   100
+ 27285.324   100
+  3130.293   100
+  8736.828   100
 

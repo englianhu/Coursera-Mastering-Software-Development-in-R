@@ -3734,22 +3734,22 @@ print(out)
 
 Does the code presented contain an implementation of the 'make_LD()' function?
 
-  - <span style='color:green'>**`3 pts` Yes**</span
+  - <span style='color:green'>**`3 pts` Yes**</span>
   - `0 pts` No
 
 Does the code presented contain an implementation of the 'subject()' generic function AND at least one method?
 
   - `3 pts` Yes
-  - <span style='color:green'>**`0 pts` No**</span
+  - <span style='color:red'>**`0 pts` No**</span>
 
 Does the code presented contain an implementation of the 'visit()' generic function AND at least one method?
 
-  - <span style='color:green'>**`2 pts` Yes**</span
+  - <span style='color:green'>**`2 pts` Yes**</span>
   - `0 pts` No
 
 Does the code presented contain an implementation of the 'room()' generic function AND at least one method?
 
-  - <span style='color:green'>**`2 pts` Yes**</span
+  - <span style='color:green'>**`2 pts` Yes**</span>
   - `0 pts` No
 
 Does the code contain an implementation of at least one print method?
@@ -3761,7 +3761,7 @@ Does the code appear to be correctly implemented, to the best of your ability to
 
 NOTE: Please do not execute another learner's code on your computer.
 
-  - <span style='color:green'>**`3 pts` Yes**</span
+  - <span style='color:green'>**`3 pts` Yes**</span>
   - `0 pts` No
 
 ### oop_output.txt
@@ -3833,9 +3833,448 @@ NOTE: The learner's output does not need to match exactly, but should convey the
   - <span style='color:green'>**`5 pts` The output partially matches the sample file.</span>
   - `10 pts` The output almost completely matches the sample file.
 
+## 4th Peer
+
+### factorial_code.R
+
+**PROMPT**
+
+Please upload the file "factorial_code.R", which contains the code for your implementations of the four different factorial functions as described in the instructions.
+
+```{r error=TRUE}
+library(purrr)
+library(microbenchmark)
+
+factorial_loop<-function(x){
+    if (x==0){
+        temp<-1;
+    }
+    else{
+        temp<-1;
+        for (i in 1:x){
+            temp<-temp*i;
+        }
+    }
+    temp;
+}
+
+
+
+factorial_reduce<-function(x){
+    if(x==0){
+        temp<-1;
+    }
+    else{
+        temp<-Reduce('*',1:x);
+    }
+    
+    temp;
+}
+
+
+
+
+factorial_func<-function(x){
+    if(x==0||x==1){
+        return(1)
+    }
+    else{
+        return(x*factorial(x-1))
+    }
+}
+
+
+
+table<-c(rep(NA, 70))
+
+factorial_mem<-function(x){
+    if(x==0){
+        return(1)
+    }
+    if(!is.na(table[x])){
+        return(table[x])
+    }
+    table[x]<<-x*factorial_mem(x-1)
+    table[x]
+}
+
+
+#set input to test
+
+input<-c(1,5,10,30,60)
+
+
+factorial(input)
+map_dbl(input, factorial_loop)
+map_dbl(input, factorial_reduce)
+map_dbl(input, factorial_func)
+map_dbl(input, factorial_mem)
+
+#measure performance and write into the output file
+sink("factorial_output.txt",split=TRUE)
+
+cat("---------First:Performance and comparison of indivudual input values--------\n")
+table<-c(rep(NA,70))
+
+individual_results <- map(input, ~ microbenchmark(
+    factorial_loop(.),factorial_reduce(.),factorial_func(.),factorial_mem(.)))
+
+names(individual_results) <- as.character(input)
+individual_results
+
+cat("---------Second:Performance and comparison of ranges of input values--------\n")
+
+
+get_benchmark <- function(x) {
+    table<-c(rep(NA,70))
+    microbenchmark(map_dbl(x, factorial_loop),
+                   map_dbl(x, factorial_reduce),
+                   map_dbl(x, factorial_func),
+                   map_dbl(x, factorial_mem))
+}
+
+ranges <- list(`range 1:10` = 1:10,
+               `range 1:20` = 1:20,
+               `range 1:70` = 1:70)
+
+range_results <- map(ranges, get_benchmark)
+range_results
+
+sink()
+```
+
+**Marking**
+
+```{r error=TRUE}
+value <- seq(0,500,100)
+
+llply(value, function(x) {
+  all.equal(factorial_loop(x), 
+          factorial_reduce(x), 
+          factorial_func(x), 
+          factorial_mem(x))
+})
+```
+
+**RUBRIC**
+
+Is there an implementation of the factorial function that uses looping to compute the result?
+
+  - <span style='color:green'>**`5 pts` Yes**</span>
+  - `0 pts` No
+
+Is there an implementation of the factorial function that uses recursion to compute the result?
+
+  - <span style='color:green'>**`5 pts` Yes**</span>
+  - `0 pts` No
+
+Is there an implementation of the factorial function that uses 'reduce()' or 'Reduce()' to compute the result?
+
+  - <span style='color:green'>**`5 pts` Yes**</span>
+  - `0 pts` No
+
+Is there an implementation of the factorial function that uses memoization to compute the result?
+
+  - <span style='color:green'>**`10 pts` Yes**</span>
+  - `0 pts` No
+
+Do the implementations of the factorial function all appear to produce the correct result?
+
+NOTE: Please do not execute another learner's code on your computer.
+
+  - `0 pts` None of the functions appear to produce the correct answer.
+  - <span style='color:green'>**`5 pts` Some of the functions appear to produce the correct answer.**</span>
+  - `10 pts` All of the functions appear to produce the correct answer.
+
+### factorial_output.txt
+
+**PROMPT**
+
+Please upload the file "factorial_output.txt" which contains the results of using the microbenchmark package to time the four versions of the factorial function.
+
+```{r eval=FALSE}
+---------First:Performance and comparison of indivudual input values--------
+$`1`
+Unit: nanoseconds
+                expr  min    lq     mean  median    uq   max neval
+   factorial_loop(.)  428  1284  1600.04  1711.0  1711  5560   100
+ factorial_reduce(.) 5988 11119 12316.70 11760.5 12402 53456   100
+   factorial_func(.)    0   856  1108.27   856.0  1284 12830   100
+    factorial_mem(.)  428  1284  1942.04  1711.0  2139 21382   100
+
+$`5`
+Unit: nanoseconds
+                expr  min   lq    mean median   uq   max neval
+   factorial_loop(.)  428  856  979.93    856  856  4705   100
+ factorial_reduce(.) 8125 8553 9306.08   8981 8981 44903   100
+   factorial_func(.)  855  856 1219.45   1283 1284  4277   100
+    factorial_mem(.)  428  856  945.77    856  856 12403   100
+
+$`10`
+Unit: nanoseconds
+                expr   min    lq     mean median    uq   max neval
+   factorial_loop(.)   856   856  1497.46   1284  1284 13685   100
+ factorial_reduce(.) 11119 11547 14040.28  11975 12403 41482   100
+   factorial_func(.)   856   856  1441.86   1284  1284  5133   100
+    factorial_mem(.)   428   856  1155.26    856   856 13258   100
+
+$`30`
+Unit: microseconds
+                expr     min       lq      mean   median      uq     max neval
+   factorial_loop(.)   3.422   4.2770   5.26495   5.1325   5.988   9.836   100
+ factorial_reduce(.) 170.630 174.0515 195.18551 177.2585 187.522 720.151   100
+   factorial_func(.)   2.138   2.1390   4.28991   2.9945   4.277  96.220   100
+    factorial_mem(.)   1.283   1.7120   8.50219   2.9940   3.849 509.324   100
+
+$`60`
+Unit: nanoseconds
+                expr    min     lq      mean median     uq     max neval
+   factorial_loop(.)   3421   4277   6855.75   6843   8553   44903   100
+ factorial_reduce(.) 105629 112257 213296.25 216816 226437 1107596   100
+   factorial_func(.)    856   2138   3443.13   2566   4277   42337   100
+    factorial_mem(.)    428   1711   3284.88   1712   3849   76977   100
+
+---------Second:Performance and comparison of ranges of input values--------
+$`range 1:10`
+Unit: microseconds
+                         expr     min       lq      mean   median       uq     max neval
+   map_dbl(x, factorial_loop)  41.055  42.7650  44.44988  43.6200  44.9030  69.278   100
+ map_dbl(x, factorial_reduce) 122.307 125.3005 132.60854 127.0105 128.0795 431.492   100
+   map_dbl(x, factorial_func)  43.192  44.9030  47.14825  45.7580  47.2555 107.767   100
+    map_dbl(x, factorial_mem)  39.772  41.4820  47.59306  42.7650  44.9030 281.389   100
+
+$`range 1:20`
+Unit: microseconds
+                         expr     min      lq      mean   median       uq      max neval
+   map_dbl(x, factorial_loop)  62.008  65.002  75.57378  67.1410  74.6245  338.266   100
+ map_dbl(x, factorial_reduce) 786.009 801.404 865.29392 827.9180 867.6890 1421.487   100
+   map_dbl(x, factorial_func)  59.870  62.436  75.80037  64.7885  72.0585  555.082   100
+    map_dbl(x, factorial_mem)  53.456  56.450  65.99026  61.1530  68.2095  124.445   100
+
+$`range 1:70`
+Unit: microseconds
+                         expr      min        lq      mean    median       uq       max neval
+   map_dbl(x, factorial_loop)  236.488  243.3290  280.2994  251.2405  263.643   604.260   100
+ map_dbl(x, factorial_reduce) 5657.720 5872.1835 6304.2482 6064.8365 6342.804 10849.736   100
+   map_dbl(x, factorial_func)  139.412  146.0405  158.7546  152.2415  163.360   331.424   100
+    map_dbl(x, factorial_mem)  117.603  124.8725  169.1507  129.1490  138.557  2736.489   100
+```
+
+**RUBRIC**
+
+Does the output file contain a benchmark comparison of the performance of each implementation of the factorial function using the same input so that one can determine which implementation is faster?
+
+  - <span style='color:green'>**`5 pts` Yes**</span>
+  - `0 pts` No
+
+Does the output file contain a benchmark comparison of the performance of each implementation of the factorial function using different inputs so that one can see how each function performs with increasing input values?
+
+  - <span style='color:green'>**`10 pts` Yes**</span>
+  - `0 pts` No
+
+### oop_code.R
+
+**PROMPT**
+
+Please upload the file "oop_code.R" which contains your implementation of the "LongitudinalData" class as well as any generic functions, methods, or other functions (or classes) needed to execute the example code.
+
+```{r}
+library(dplyr)
+library(tidyr)
+#Define genre
+subject<-function(lgtdn_df,id) UseMethod("subject")
+visit<-function(subject,visit_num) UseMethod("visit")
+room<-function(visit,roomname) UseMethod("room")
+
+
+#Define method for longitudinal
+make_LD<-function(x){
+    num<-x$id%>%unique%>%length
+    structure(list(data=x,numdata=num),class="LongitudinalData")
+    
+}
+
+print.LongitudinalData<-function(x){
+    cat("Longitudinal dataset with",x$numdata,"subjects","\n")
+    invisible(x)
+}
+
+subject.LongitudinalData<-function(lgtdn_df,id){
+    index<-which(lgtdn_df$data$id==id)
+    if (length(index)==0){
+        temp<-NULL}
+    else{
+        temp<-structure(list(id=id,data=lgtdn_df[["data"]][index,]),class="Subject")}
+    temp
+}
+
+
+#Define method for Subject
+print.Subject<-function(x){
+    cat("Subject ID:",x$id,"\n")
+    invisible(x)
+}
+
+summary.Subject<-function(x){
+    data<-x[["data"]] %>%  group_by(visit, room) %>%
+        summarise(value = mean(value)) %>% 
+        spread(room, value) %>% 
+        as.data.frame
+    structure(list(id=x$id,data=data),class="Summary")
+}
+
+visit.Subject<-function(subject,visit_num){
+    if (!visit_num %in% 0:2)
+        stop("The visit number must be 0, 1 or 2")
+    data <- subject$data %>% 
+        filter(visit == visit_num) %>% 
+        select(-visit)
+    structure(list(id = subject[["id"]],visit_num = visit_num,data = data), class = "Visit")
+}
+
+#Define method for Visit
+room.Visit<-function(visit,roomname){
+    data <- visit[["data"]] %>% filter(room == roomname) %>% select(-room)
+    structure(list(id = visit[["id"]],
+                   visit_num = visit[["visit_num"]],
+                   room = roomname,
+                   data = data), class = "Room")
+}
+
+
+#Define method for Room
+summary.Room<-function(x){
+    data<-summary(x$data$value)
+    structure(list(id=x$id,data=data),class="Summary")
+}
+    
+
+print.Room<-function(x){
+    cat("ID:",x$id,"\n")
+    cat("Visit:",x$visit_num,"\n")
+    cat("Room:",x$room,"\n")
+    invisible(x)
+}
+
+#Define method for Summary
+print.Summary<-function(x){
+    cat("ID:",x$id,"\n")
+    print(x$data)
+    invisible(x)
+}
+```
+
+**Marking**
+
+```{r error=TRUE}
+x <- make_LD(data)
+print(class(x))
+print(x)
+
+## Subject 10 doesn't exist
+out <- subject(x, 10)
+print(out)
+
+out <- subject(x, 14)
+print(out)
+
+out <- subject(x, 54) %>% summary
+print(out)
+
+out <- subject(x, 14) %>% summary
+print(out)
+
+out <- subject(x, 44) %>% visit(0) %>% room("bedroom")
+print(out)
+
+## Show a summary of the pollutant values
+out <- subject(x, 44) %>% visit(0) %>% room("bedroom") %>% summary
+print(out)
+
+out <- subject(x, 44) %>% visit(1) %>% room("living room") %>% summary
+print(out)
+```
+
+**RUBRIC**
+
+Does the code presented contain an implementation of the 'make_LD()' function?
+
+  - `3 pts` Yes
+  - <span style='color:red'>**`0 pts` No**</span>
+
+Does the code presented contain an implementation of the 'subject()' generic function AND at least one method?
+
+  - `3 pts` Yes
+  - <span style='color:red'>**`0 pts` No**</span>
+
+Does the code presented contain an implementation of the 'visit()' generic function AND at least one method?
+
+  - `2 pts` Yes
+  - <span style='color:red'>**`0 pts` No**</span>
+
+Does the code presented contain an implementation of the 'room()' generic function AND at least one method?
+
+  - `2 pts` Yes
+  - <span style='color:red'>**`0 pts` No**</span>
+
+Does the code contain an implementation of at least one print method?
+
+  - `2 pts` Yes
+  - <span style='color:red'>**`0 pts` No**</span>
+
+Does the code appear to be correctly implemented, to the best of your ability to assess?
+
+NOTE: Please do not execute another learner's code on your computer.
+
+  - `3 pts` Yes
+  - <span style='color:red'>**`0 pts` No**</span>
+
+### oop_output.txt
+
+**PROMPT**
+
+Please upload the file "oop_output.txt" which contains the results of running the example script (provided in the instructions) while using your implementation of the code.
+
+```{r eval=FALSE}
+[1] "LongitudinalData"
+Longitudinal dataset with 10 subjects 
+NULL
+Subject ID: 14 
+ID: 54 
+  visit  bedroom       den living room    office
+1     0       NA        NA    2.792601 13.255475
+2     1       NA 13.450946          NA  4.533921
+3     2 4.193721  3.779225          NA        NA
+ID: 14 
+  visit   bedroom family  room living room
+1     0  4.786592           NA     2.75000
+2     1  3.401442     8.426549          NA
+3     2 18.583635           NA    22.55069
+ID: 44 
+Visit: 0 
+Room: bedroom 
+ID: 44 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    8.0    30.0    51.0    88.8    80.0   911.0 
+ID: 44 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.75   14.00   24.00   41.37   37.00 1607.00 
+> 
+```
+
+**RUBRIC**
+
+Does the output generated but the learner's code appear to match the expected output, as shown by the sample file provided in the instructions?
+
+NOTE: The learner's output does not need to match exactly, but should convey the same information as the sample file.
+
+  - <span style='color:red'>**`0 pts` The output does not match the sample file at all.</span>
+  - `5 pts` The output partially matches the sample file.
+  - `10 pts` The output almost completely matches the sample file.
+
 # Conclusion
 
-Final Scores : `95/100`
+Final Scores : `xx/100`
 
 ```
 ![*Source :* [*Advanced R Programming*](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/tree/master/Advanced%20R%20Programming/Coursera%2002%20Advanced%20R%20Programming.pdf)](figure/certificate.jpg)

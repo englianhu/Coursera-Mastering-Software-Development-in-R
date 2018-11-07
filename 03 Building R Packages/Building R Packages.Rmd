@@ -2628,52 +2628,57 @@ Are the build logs for this package on Travis free of any errors, warnings, or n
 
 ## 3rd Peer
 
+**PROMPT**
+
+Please enter the URL to your package's GitHub repository
+
+https://github.com/ntbohl/fars
 
 **RUBRIC**
 
 Does this package contain the correct R file(s) under the R/ directory?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 Does this package contain a man/ directory with corresponding documentation files?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 Does this package contain a vignette which provides a meaningful description of the package and how it should be used?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 Does this package have at least one test included in the tests/ directory?
 
-- `0 pts` No
+- <span style='color:red'>**`0 pts` No**</span>
 - `1 pts` Yes
 
 Does this package have a NAMESPACE file?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 Does the README.md file for this directory have a Travis badge?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 Is the build of this package passing on Travis?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 Are the build logs for this package on Travis free of any errors, warnings, or notes?
 
 - `0 pts` No
-- `1 pts` Yes
+- <span style='color:green'>**`1 pts` Yes**</span>
 
 # Conclusion
 
-Final Scores : `95/100`
+Final Scores : `xx/100`
 
 ```
 ![*Source :* [*Advanced R Programming*](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/tree/master/Advanced%20R%20Programming/Coursera%2002%20Advanced%20R%20Programming.pdf)](figure/certificate.jpg)

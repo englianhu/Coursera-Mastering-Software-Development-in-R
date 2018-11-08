@@ -1,0 +1,4 @@
+Quitting from lines 2-11 (Intro.Rmd) 
+Error: processing vignette 'Intro.Rmd' failed with diagnostics:
+there is no package called 'lubridate'
+Execution halted

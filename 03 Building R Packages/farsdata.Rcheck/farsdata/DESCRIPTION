@@ -1,0 +1,22 @@
+Package: farsdata
+Type: Package
+Title: farsdata R Package
+Version: 0.1.0
+Authors@R: person("LIAN HU", "ENG", email = "englianhu@gmail.com", role = c("aut", "cre"))
+Description: Coursera : Build-R-Package.
+Depends: R (>= 3.5.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Imports: knitr (>= 1.20), dplyr (>= 0.7.99.9000), mapdata (>= 2.3.0),
+        maps (>= 3.3.0), magrittr (>= 1.5), readr (>= 1.1.1), tidyr (>=
+        0.8.2.9000), tibble (>= 1.4.99.9005)
+Suggests: rmarkdown, testthat
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+NeedsCompilation: no
+Packaged: 2018-11-05 09:48:52 UTC; scibr
+Author: LIAN HU ENG [aut, cre]
+Maintainer: LIAN HU ENG <englianhu@gmail.com>
+Built: R 3.5.1; ; 2018-11-08 18:48:12 UTC; windows

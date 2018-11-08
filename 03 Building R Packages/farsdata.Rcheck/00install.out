@@ -1,0 +1,14 @@
+* installing *source* package 'farsdata' ...
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+No man pages found in package  'farsdata' 
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (farsdata)
+In R CMD INSTALL

@@ -1,0 +1,71 @@
+* using log directory 'C:/Users/Owner/Documents/Coursera-Mastering-Software-Development-in-R/03 Building R Packages/farsdata.Rcheck'
+* using R version 3.5.1 (2018-07-02)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* using options '--no-manual --as-cran'
+* checking for file 'farsdata/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'farsdata' version '0.1.0'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking whether package 'farsdata' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking 'build' directory ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Dependence on R version '3.5.1' not with patchlevel 0
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+fars_map_state: no visible binding for global variable 'STATE'
+fars_read_years : <anonymous>: no visible binding for global variable
+  'MONTH'
+fars_summarize_years: no visible binding for global variable 'year'
+fars_summarize_years: no visible binding for global variable 'MONTH'
+Undefined global functions or variables:
+  MONTH STATE year
+* checking for missing documentation entries ... WARNING
+Undocumented code objects:
+  'fars_map_state' 'fars_read' 'fars_read_years' 'fars_summarize_years'
+  'make_filename'
+All user-level objects in a package should have documentation entries.
+See chapter 'Writing R documentation files' in the 'Writing R
+Extensions' manual.
+* checking installed files from 'inst/doc' ... OK
+* checking files in 'vignettes' ... NOTE
+The following directory looks like a leftover from 'knitr':
+  'figure'
+Please remove from your package.
+* checking examples ... NONE
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in 'inst/doc' ... OK
+* checking re-building of vignette outputs ... WARNING
+Error in re-building vignettes:
+  ...
+Quitting from lines 2-11 (Intro.Rmd) 
+Error: processing vignette 'Intro.Rmd' failed with diagnostics:
+there is no package called 'lubridate'
+Execution halted
+
+* DONE
+Status: 3 WARNINGs, 2 NOTEs

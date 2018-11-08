@@ -1,0 +1,85 @@
+---
+title: "Introduction to `farsdata` Package"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/RYO.jpg' width='24'> <img src='figure/RYU.jpg' width='24'> <img src='figure/ENG.jpg' width='24'>®"
+date: "`r lubridate::today('Asia/Tokyo')`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setenv, echo=FALSE, message=FALSE}
+library(farsdata)
+library(maps)
+```
+
+This package is primarily built for educational purposes. The package enables one to explore fatal traffic accidents from 2013-2015 using data from the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS).  
+
+## The Data
+
+The data in this package come from the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) data.
+
+```{r sample2013_data}
+fars_2013_fn <- make_filename(2013)
+fars_2013 <- fars_read(fars_2013_fn) 
+dim(fars_2013)
+fars_2013
+```
+
+For detailed information about the data, see the [NHTSA FARS Manuals & Documentation page](https://crashstats.nhtsa.dot.gov/#/DocumentTypeList/4). 
+
+## Loading FARS Data
+
+To load all of the data for a given year, use the `make_filename()` and `fars_read()` functions, as shown in the previous section.
+
+### About the Filename
+
+Use the `make_filename` command to find out where data is stored on your machine and/or create a filename to save/load new data.
+
+BEWARE: re-installing the package may cause your data to be overridden
+
+```{r make_filename}
+fars_2013_fn <- make_filename(2013)
+fars_2013_fn
+```
+
+### Single Year
+
+If you wish to just look at fatality data for a a single year, use the `fars_read_years()` function with a single year as input. The only data columns selected are `MONTH` and `year`.  This returns a list of length one, and the first element in the list is the `tbl_df` (the `tidyverse` data frame) listing the month and year for each fatal accident.
+
+```{r single_year}
+fars_2014 <- fars_read_years(years = 2014)
+fars_2014[[1]]
+```
+
+### Multiple Years
+
+If you wish to look at fatalities for multiple years, enter a vector of years as the argument for the `fars_read_years()` function (examples: `fars_read_years(years = c(2013, 2015))` or `fars_read_years(2013:2015)`.  Again, this returns a list of `tbl_df`s,  with each element of the list showing the month and year for each fatality. 
+
+```{r multiple_years}
+fars_3yrs <- fars_read_years(years = 2013:2015)
+fars_3yrs
+```
+
+## Summarizing FARS Data
+
+The `fars_summarize_years()` function take the same argument as the `fars_read_years()`, and produces a summary of the simple counts of fatalities by month and year: 
+
+```{r summarize_data}
+fars_summary <- fars_summarize_years(2013:2015)
+fars_summary
+```
+
+
+## Mapping Fatal Crashes
+
+Finally, the `fars_map_state` function takes a state ID number and a year, and maps that state's fatalities with a dot at the fatality location.  Note that in order to use this function, you will likely need to load the `mapdata` package.  
+
+For a list of the state ID numbers, see page 26 of the [FARS Analytical User's Guide (2015)](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812315#27). 
+
+```{r mapping_crashes}
+library(mapdata)
+fars_map_state(53, 2014)
+fars_map_state(36, 2014)
+```

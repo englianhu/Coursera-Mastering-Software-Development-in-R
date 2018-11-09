@@ -1,6 +1,7 @@
 ## ----setenv, echo=FALSE, message=FALSE-----------------------------------
-library(farsdata)
-library(maps)
+library('farsdata')
+library('mapdata')
+library('lubridate')
 
 ## ----sample2013_data-----------------------------------------------------
 fars_2013_fn <- make_filename(2013)
@@ -25,7 +26,6 @@ fars_summary <- fars_summarize_years(2013:2015)
 fars_summary
 
 ## ----mapping_crashes-----------------------------------------------------
-library(mapdata)
 fars_map_state(53, 2014)
 fars_map_state(36, 2014)
 

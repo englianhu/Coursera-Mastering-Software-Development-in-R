@@ -1,9 +1,9 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-farsdata
+The `farsdata` R Package
 ========
 
-The goal of farsdata is to ...
+<img src="vignettes/figure/coursera.jpg" width="120" />
+
+This is an assignment for the **Course 3 : Building R Packages**. Kindly refer to my GitHub repo for the courses [Coursera Mastering Software Development in R](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R) to know the course detail or [Building R Packages](https://www.coursera.org/learn/r-packages) to register for study.
 
 Installation
 ------------
@@ -11,35 +11,51 @@ Installation
 You can install the released version of farsdata from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("farsdata")
+install.packages('farsdata')
+
+# Or below code if above code unable install the package
+devtools::install_github('englianhu/farsdata')
 ```
 
 Example
 -------
 
-This is a basic example which shows you how to solve a common problem:
+You can load the package and read the sample dataset.
 
 ``` r
-## basic example code
+library(farsdata)
+library(maps)
+
+fars_2013_fn <- make_filename(2013)
+fars_2013 <- fars_read(fars_2013_fn) 
+dim(fars_2013)
+## [1] 30202    50
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+The data in this package come from the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) data.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+## [[1]]
+## # A tibble: 30,202 x 2
+##    MONTH  year
+##    <int> <dbl>
+##  1     1  2013
+##  2     1  2013
+##  3     1  2013
+##  4     1  2013
+##  5     1  2013
+##  6     1  2013
+##  7     1  2013
+##  8     1  2013
+##  9     1  2013
+## 10     1  2013
+## # ... with 30,192 more rows
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+Vignettes
+-------
 
-You can also embed plots, for example:
+You can refer to below articles for more infoamtion about the package.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+- [Introduction to `farsdata` Package](http://rpubs.com/englianhu/farsdata-intro)
+- [Fatality Analysis Reporting System (FARS)](http://rpubs.com/englianhu/farsdata-vignette)

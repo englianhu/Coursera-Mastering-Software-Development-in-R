@@ -1,4 +1,13 @@
-Quitting from lines 2-11 (Intro.Rmd) 
+Loading required package: maps
+
+Attaching package: 'lubridate'
+
+The following object is masked from 'package:base':
+
+    date
+
+pandoc.exe: Could not fetch figure/RYO.jpg
+figure/RYO.jpg: openBinaryFile: does not exist (No such file or directory)
 Error: processing vignette 'Intro.Rmd' failed with diagnostics:
-there is no package called 'lubridate'
+pandoc document conversion failed with error 67
 Execution halted

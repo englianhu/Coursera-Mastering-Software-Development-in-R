@@ -1,0 +1,222 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "farsdata"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> base::assign(".ExTimings", "farsdata-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('farsdata')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("fars_map_state")
+> ### * fars_map_state
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: fars_map_state
+> ### Title: Display accidents map by state and year
+> ### Aliases: fars_map_state
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D fars_map_state(49, 2015)
+> ## End(Not run)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("fars_map_state", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("fars_read")
+> ### * fars_read
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: fars_read
+> ### Title: Read file with FARS data
+> ### Aliases: fars_read
+> 
+> ### ** Examples
+> 
+> library(dplyr)
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+> library(readr)
+> yr <- 2015
+> data <- yr %>%
++   make_filename %>%
++   fars_read
+> head(data)
+[90m# A tibble: 6 x 52[39m
+  STATE ST_CASE VE_TOTAL VE_FORMS PVH_INVL  PEDS PERNOTMVIT PERMVIT PERSONS
+  [3m[90m<int>[39m[23m   [3m[90m<int>[39m[23m    [3m[90m<int>[39m[23m    [3m[90m<int>[39m[23m    [3m[90m<int>[39m[23m [3m[90m<int>[39m[23m      [3m[90m<int>[39m[23m   [3m[90m<int>[39m[23m   [3m[90m<int>[39m[23m
+[90m1[39m     1   [4m1[24m[4m0[24m001        1        1        0     0          0       1       1
+[90m2[39m     1   [4m1[24m[4m0[24m002        1        1        0     0          0       1       1
+[90m3[39m     1   [4m1[24m[4m0[24m003        1        1        0     0          0       2       2
+[90m4[39m     1   [4m1[24m[4m0[24m004        1        1        0     0          0       1       1
+[90m5[39m     1   [4m1[24m[4m0[24m005        2        2        0     0          0       2       2
+[90m6[39m     1   [4m1[24m[4m0[24m006        1        1        0     0          0       2       2
+[90m# ... with 43 more variables: COUNTY [3m[90m<int>[90m[23m, CITY [3m[90m<int>[90m[23m, DAY [3m[90m<int>[90m[23m, MONTH [3m[90m<int>[90m[23m,
+#   YEAR [3m[90m<int>[90m[23m, DAY_WEEK [3m[90m<int>[90m[23m, HOUR [3m[90m<int>[90m[23m, MINUTE [3m[90m<int>[90m[23m, NHS [3m[90m<int>[90m[23m,
+#   RUR_URB [3m[90m<int>[90m[23m, FUNC_SYS [3m[90m<int>[90m[23m, RD_OWNER [3m[90m<int>[90m[23m, ROUTE [3m[90m<int>[90m[23m, TWAY_ID [3m[90m<chr>[90m[23m,
+#   TWAY_ID2 [3m[90m<chr>[90m[23m, MILEPT [3m[90m<int>[90m[23m, LATITUDE [3m[90m<dbl>[90m[23m, LONGITUD [3m[90m<dbl>[90m[23m, SP_JUR [3m[90m<int>[90m[23m,
+#   HARM_EV [3m[90m<int>[90m[23m, MAN_COLL [3m[90m<int>[90m[23m, RELJCT1 [3m[90m<int>[90m[23m, RELJCT2 [3m[90m<int>[90m[23m, TYP_INT [3m[90m<int>[90m[23m,
+#   WRK_ZONE [3m[90m<int>[90m[23m, REL_ROAD [3m[90m<int>[90m[23m, LGT_COND [3m[90m<int>[90m[23m, WEATHER1 [3m[90m<int>[90m[23m,
+#   WEATHER2 [3m[90m<int>[90m[23m, WEATHER [3m[90m<int>[90m[23m, SCH_BUS [3m[90m<int>[90m[23m, RAIL [3m[90m<chr>[90m[23m, NOT_HOUR [3m[90m<int>[90m[23m,
+#   NOT_MIN [3m[90m<int>[90m[23m, ARR_HOUR [3m[90m<int>[90m[23m, ARR_MIN [3m[90m<int>[90m[23m, HOSP_HR [3m[90m<int>[90m[23m, HOSP_MN [3m[90m<int>[90m[23m,
+#   CF1 [3m[90m<int>[90m[23m, CF2 [3m[90m<int>[90m[23m, CF3 [3m[90m<int>[90m[23m, FATALS [3m[90m<int>[90m[23m, DRUNK_DR [3m[90m<int>[90m[23m[39m
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("fars_read", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching 'package:readr', 'package:dplyr'
+
+> nameEx("fars_read_years")
+> ### * fars_read_years
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: fars_read_years
+> ### Title: Read farsdata years
+> ### Aliases: fars_read_years
+> 
+> ### ** Examples
+> 
+> fars_read_years(2013)
+[[1]]
+[90m# A tibble: 30,202 x 2[39m
+   MONTH  year
+   [3m[90m<int>[39m[23m [3m[90m<int>[39m[23m
+[90m 1[39m     1  [4m2[24m013
+[90m 2[39m     1  [4m2[24m013
+[90m 3[39m     1  [4m2[24m013
+[90m 4[39m     1  [4m2[24m013
+[90m 5[39m     1  [4m2[24m013
+[90m 6[39m     1  [4m2[24m013
+[90m 7[39m     1  [4m2[24m013
+[90m 8[39m     1  [4m2[24m013
+[90m 9[39m     1  [4m2[24m013
+[90m10[39m     1  [4m2[24m013
+[90m# ... with 30,192 more rows[39m
+
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("fars_read_years", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("fars_summarize_years")
+> ### * fars_summarize_years
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: fars_summarize_years
+> ### Title: Summarize farsdata by years
+> ### Aliases: fars_summarize_years
+> 
+> ### ** Examples
+> 
+> plot(fars_summarize_years(2015))
+> fars_summarize_years(c(2015, 2014))
+[90m# A tibble: 12 x 3[39m
+   MONTH `2014` `2015`
+   [3m[90m<int>[39m[23m  [3m[90m<int>[39m[23m  [3m[90m<int>[39m[23m
+[90m 1[39m     1   [4m2[24m168   [4m2[24m368
+[90m 2[39m     2   [4m1[24m893   [4m1[24m968
+[90m 3[39m     3   [4m2[24m245   [4m2[24m385
+[90m 4[39m     4   [4m2[24m308   [4m2[24m430
+[90m 5[39m     5   [4m2[24m596   [4m2[24m847
+[90m 6[39m     6   [4m2[24m583   [4m2[24m765
+[90m 7[39m     7   [4m2[24m696   [4m2[24m998
+[90m 8[39m     8   [4m2[24m800   [4m3[24m016
+[90m 9[39m     9   [4m2[24m618   [4m2[24m865
+[90m10[39m    10   [4m2[24m831   [4m3[24m019
+[90m11[39m    11   [4m2[24m714   [4m2[24m724
+[90m12[39m    12   [4m2[24m604   [4m2[24m781
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("fars_summarize_years", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("make_filename")
+> ### * make_filename
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: make_filename
+> ### Title: Make data file name
+> ### Aliases: make_filename
+> 
+> ### ** Examples
+> 
+> make_filename(2013)
+[1] "C:/Users/Owner/AppData/Local/Temp/RtmpInPfxe/RLIBS_1d347075288a/farsdata/extdata/accident_2013.csv.bz2"
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("make_filename", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  9.29 0.73 10.81 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

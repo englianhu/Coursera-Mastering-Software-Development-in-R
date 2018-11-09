@@ -1,0 +1,5 @@
+fars_map_state          Display accidents map by state and year
+fars_read               Read file with FARS data
+fars_read_years         Read farsdata years
+fars_summarize_years    Summarize farsdata by years
+make_filename           Make data file name

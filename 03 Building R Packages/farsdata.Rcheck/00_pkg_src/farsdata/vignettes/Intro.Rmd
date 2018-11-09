@@ -10,8 +10,9 @@ vignette: >
 ---
 
 ```{r setenv, echo=FALSE, message=FALSE}
-library(farsdata)
-library(maps)
+library('farsdata')
+library('mapdata')
+library('lubridate')
 ```
 
 This package is primarily built for educational purposes. The package enables one to explore fatal traffic accidents from 2013-2015 using data from the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS).  
@@ -79,7 +80,6 @@ Finally, the `fars_map_state` function takes a state ID number and a year, and m
 For a list of the state ID numbers, see page 26 of the [FARS Analytical User's Guide (2015)](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812315#27). 
 
 ```{r mapping_crashes}
-library(mapdata)
 fars_map_state(53, 2014)
 fars_map_state(36, 2014)
 ```

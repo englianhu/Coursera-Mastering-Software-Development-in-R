@@ -1,0 +1,6 @@
+name	user	system	elapsed
+fars_map_state	0	0	0	
+fars_read	2.45	0.25	2.90	
+fars_read_years	1.31	0.07	1.52	
+fars_summarize_years	3.86	0.10	4.23	
+make_filename	0	0	0	

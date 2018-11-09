@@ -20,7 +20,9 @@
 * checking 'build' directory ... OK
 * checking DESCRIPTION meta-information ... WARNING
 Dependence on R version '3.5.1' not with patchlevel 0
-* checking top-level files ... OK
+* checking top-level files ... NOTE
+Non-standard file/directory found at top level:
+  'rsconnect'
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -36,36 +38,40 @@ Dependence on R version '3.5.1' not with patchlevel 0
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... NOTE
-fars_map_state: no visible binding for global variable 'STATE'
-fars_read_years : <anonymous>: no visible binding for global variable
-  'MONTH'
-fars_summarize_years: no visible binding for global variable 'year'
-fars_summarize_years: no visible binding for global variable 'MONTH'
-Undefined global functions or variables:
-  MONTH STATE year
-* checking for missing documentation entries ... WARNING
-Undocumented code objects:
-  'fars_map_state' 'fars_read' 'fars_read_years' 'fars_summarize_years'
-  'make_filename'
-All user-level objects in a package should have documentation entries.
-See chapter 'Writing R documentation files' in the 'Writing R
-Extensions' manual.
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
 * checking installed files from 'inst/doc' ... OK
-* checking files in 'vignettes' ... NOTE
-The following directory looks like a leftover from 'knitr':
-  'figure'
-Please remove from your package.
-* checking examples ... NONE
+* checking files in 'vignettes' ... OK
+* checking examples ... OK
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ... OK
+  Running 'testthat.R'
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in 'inst/doc' ... OK
 * checking re-building of vignette outputs ... WARNING
 Error in re-building vignettes:
   ...
-Quitting from lines 2-11 (Intro.Rmd) 
+Loading required package: maps
+
+Attaching package: 'lubridate'
+
+The following object is masked from 'package:base':
+
+    date
+
+pandoc.exe: Could not fetch figure/RYO.jpg
+figure/RYO.jpg: openBinaryFile: does not exist (No such file or directory)
 Error: processing vignette 'Intro.Rmd' failed with diagnostics:
-there is no package called 'lubridate'
+pandoc document conversion failed with error 67
 Execution halted
 
 * DONE
-Status: 3 WARNINGs, 2 NOTEs
+Status: 2 WARNINGs, 1 NOTE

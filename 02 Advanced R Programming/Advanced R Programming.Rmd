@@ -4274,11 +4274,9 @@ NOTE: The learner's output does not need to match exactly, but should convey the
 
 # Conclusion
 
-Final Scores : `xx/100`
+Final Scores : `97.5/100`
 
-```
 ![*Source :* [*Advanced R Programming*](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/tree/master/Advanced%20R%20Programming/Coursera%2002%20Advanced%20R%20Programming.pdf)](figure/certificate.jpg)
-```
 
 ```{r option, echo = FALSE}
 ## Set options back to original options

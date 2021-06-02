@@ -1,10 +1,11 @@
 ---
 title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
 subtitle: "[Building R Packages](https://www.coursera.org/learn/r-packages) <img src='figure/jhu.jpg' width='100'>"
-author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/RYO.jpg' width='24'> <img src='figure/RYU.jpg' width='24'> <img src='figure/ENG.jpg' width='24'>®"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba2.jpg' width='14'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
   html_document: 
+    mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     number_sections: yes
     toc: yes
     toc_depth: 4
@@ -12,18 +13,114 @@ output:
       collapsed: yes
       smooth_scroll: yes
     code_folding: hide
+    css: CSSBackgrounds.css
 ---
 
-```{r setup}
-rm(list = ls(all.names = TRUE))
+------
 
-suppressPackageStartupMessages(library('BBmisc'))
-pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'tidyquant', 'stringr', 'magrittr', 'tidyverse', 'plyr', 'dplyr', 'broom', 'highcharter', 'formattable', 'DT', 'httr', 'openxlsx', 'microbenchmark')
+# Setting
+
+## SCSS Setup
+
+<style>
+pre {
+  overflow-x: auto;
+}
+pre code {
+  word-wrap: normal;
+  white-space: pre;
+}
+.table-hover > tbody > tr:hover { 
+  background-color: #8D918D;
+}
+</style>
+
+```{r class.source='bg-success', class.output='bg-primary', message = FALSE, warning = FALSE}
+# install.packages("remotes")
+library('BBmisc', 'rmsfuns')
+#remotes::install_github("rstudio/sass")
+lib('sass')
+```
+
+```{scss class.source='bg-success', class.output='bg-primary'}
+/* https://stackoverflow.com/a/66029010/3806250 */
+h1 { color: #002C54; }
+h2 { color: #2F496E; }
+h3 { color: #375E97; }
+h4 { color: #556DAC; }
+h5 { color: #92AAC7; }
+
+/* ----------------------------------------------------------------- */
+/* https://gist.github.com/himynameisdave/c7a7ed14500d29e58149#file-broken-gradient-animation-less */
+.hover01 {
+  /* color: #FFD64D; */
+  background: linear-gradient(155deg, #EDAE01 0%, #FFEB94 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #EDAE01 20%, #FFEB94 80%);
+    }
+  }
+
+.hover02 {
+  color: #FFD64D;
+  background: linear-gradient(155deg, #002C54 0%, #4CB5F5 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #002C54 20%, #4CB5F5 80%);
+    }
+  }
+
+.hover03 {
+  color: #FFD64D;
+  background: linear-gradient(155deg, #A10115 0%, #FF3C5C 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #A10115 20%, #FF3C5C 80%);
+    }
+  }
+```
+
+```{r global_options, class.source='hover01', class.output='hover02'}
+## https://stackoverflow.com/a/36846793/3806250
+options(width = 999)
+knitr::opts_chunk$set(class.source = 'hover01', class.output = 'hover02', class.error = 'hover03')
+```
+
+<br><br>
+
+## Setup
+
+```{r warning=FALSE, message=FALSE}
+if(!suppressPackageStartupMessages(require('BBmisc'))) {
+  install.packages('BBmisc', dependencies = TRUE, INSTALL_opts = '--no-lock')
+}
+suppressPackageStartupMessages(require('BBmisc'))
+# suppressPackageStartupMessages(require('rmsfuns'))
+
+pkgs <- c('devtools', 'knitr', 'kableExtra', 'tidyr', 
+          'readr', 'lubridate', 'reprex', 'magrittr', 
+          'timetk', 'plyr', 'dplyr', 'stringr', 'data.table', 
+          'tidyquant', 'plyr', 'dplyr', 'broom', 'highcharter', 
+          'formattable', 'DT', 'httr', 'openxlsx', 'formattable', 
+          'microbenchmark', 'tdplyr', 'tidyverse', 'echarts4r', 
+          'paletteer')
+
 suppressAll(lib(pkgs))
+# load_pkg(pkgs)
 
-options(warn=-1)
+## Set the timezone but not change the datetime
+Sys.setenv(TZ = 'Asia/Tokyo')
+## options(knitr.table.format = 'html') will set all kableExtra tables to be 'html', otherwise need to set the parameter on every single table.
+options(warn = -1, knitr.table.format = 'html')#, digits.secs = 6)
+
+## https://stackoverflow.com/questions/39417003/long-vectors-not-supported-yet-abnor-in-rmd-but-not-in-r-script
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)#, 
+                      #cache = TRUE, cache.lazy = FALSE)
+
 rm(pkgs)
 ```
+
+<br><br>
 
 # Introduction
 
@@ -495,7 +592,7 @@ The knit function from the knitr package works by taking a document in R Markdow
 
 This means that all a user needs to do to include R code, that will be run if desired, within a document is to properly separate it from other parts of the document through the appropriate markers. To indicate R code in an RMarkdown document, you need to separate off the code chunk using the following syntax:
 
-```{r}
+```{r error=TRUE}
 my_vec <- 1:10
 ```
 
@@ -530,14 +627,18 @@ mtcars[1, 1:3]
 
 You can set “global” options at the beginning of the document. This will create new defaults for all of the chunks in the document. For example, if you want echo, warning, and message to be FALSE by default in all code chunks, you can run:
 
-```{r global_options}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE,
-  warning = FALSE)
+```
+#```{r global_options}
+#knitr::opts_chunk$set(echo = FALSE, message = FALSE,
+#  warning = FALSE)
+#```
 ```
 
 If you set both global and local chunk options that you set specifically for a chunk will take precedence over global options. For example, running a document with:
 
-```{r global_options}
+```
+#```{r global_options}
+#```
 ```
 
 ```{r check_mtcars, echo = TRUE}
@@ -726,7 +827,7 @@ Testing your code effectively has some implications for code design. In particul
 
 The testthat package is designed to make it easy to setup a battery of tests for your R package. A nice introduction to the package can bef ound in Hadley Wickham’s article in the R Journal. Essentially, the package contains a suite of functions for testing function/expression output with the expected output. The simplest use of the package is for testing a simple expression:
 
-```{r}
+```{r error=TRUE}
 library(testthat)
 expect_that(sqrt(3) * sqrt(3), equals(3))
 ```
@@ -758,7 +859,7 @@ The `expect_that()` function can be used to wrap many different kinds of test, b
 
 A collection of calls to `expect_that()` can be put together with the `test_that()` function, as in
 
-```{r}
+```{r error=TRUE}
 test_that("model fitting", {
         data(airquality)
         fit <- lm(Ozone ~ Wind, data = airquality)
@@ -1305,7 +1406,7 @@ Please upload the file 'fars_functions.R' containing the roxygen2-style document
 
 # Assignment 2 (Answer)
 
-```{r}
+```{r error=TRUE}
 fars_read <- function(filename) {
         if(!file.exists(filename))
                 stop("file '", filename, "' does not exist")
@@ -1386,7 +1487,7 @@ writeLines(c(
 close(fileConn)
 ```
 
-```{r}
+```{r error=TRUE}
 roxygen2::roxygenise('farsdata')
 ```
 
@@ -2689,7 +2790,11 @@ Final Scores : `xx/100`
 options(warn = 0)
 ```
 
+<br><br>
+
 # Appendix
+
+## Blooper
 
 ## Documenting File Creation 
 
@@ -2698,41 +2803,53 @@ It's useful to record some information about how your file was created.
 - File creation date: 2018-11-04
 - File latest updated date: `r today('Asia/Tokyo')`
 - `r R.version.string`
-- R version (short form): `r getRversion()`
 - [**rmarkdown** package](https://github.com/rstudio/rmarkdown) version: `r packageVersion('rmarkdown')`
-- File version: 1.0.1
-- Author Profile: [®γσ, Eng Lian Hu](https://beta.rstudioconnect.com/content/4352)
-- GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
+- File version: 1.0.0
+- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
+- GitHub: [Source Code](https://github.com/englianhu/coursera-bayesian-statistics-mixture-models)
 - Additional session information:
 
-```{r info, echo=FALSE, warning=FALSE, results='asis'}
-sys1 <- session_info()$platform %>% 
-  unlist %>% 
-  data.frame(Category = names(.), session_info = .)
+```{r info, warning=FALSE, error=TRUE, results='asis'}
+suppressMessages(require('dplyr', quietly = TRUE))
+suppressMessages(require('magrittr', quietly = TRUE))
+suppressMessages(require('formattable', quietly = TRUE))
+suppressMessages(require('knitr', quietly = TRUE))
+suppressMessages(require('kableExtra', quietly = TRUE))
+
+sys1 <- devtools::session_info()$platform %>% 
+  unlist %>% data.frame(Category = names(.), session_info = .)
 rownames(sys1) <- NULL
 
 sys2 <- data.frame(Sys.info()) %>% 
-  mutate(Category = rownames(.)) %>% 
-  .[2:1]
+  dplyr::mutate(Category = rownames(.)) %>% .[2:1]
 names(sys2)[2] <- c('Sys.info')
 rownames(sys2) <- NULL
 
-if (nrow(sys1) == 7 & nrow(sys2) == 8) {
-  sys1 %<>% rbind(., data.frame(
-  Category = 'Current time', 
-  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
-} else {
+if (nrow(sys1) == 9 & nrow(sys2) == 8) {
   sys2 %<>% rbind(., data.frame(
   Category = 'Current time', 
-  Sys.info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
+  Sys.info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))
+} else {
+  sys1 %<>% rbind(., data.frame(
+  Category = 'Current time', 
+  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))
 }
 
-cbind(sys1, sys2) %>% 
-  kable(caption = 'Additional session information:') %>% 
-  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
+sys <- cbind(sys1, sys2) %>% 
+  kbl(caption = 'Additional session information:') %>% 
+  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive')) %>% 
+  row_spec(0, background = 'DimGrey', color = 'yellow') %>% 
+  column_spec(1, background = 'CornflowerBlue', color = 'red') %>% 
+  column_spec(2, background = 'grey', color = 'black') %>% 
+  column_spec(3, background = 'CornflowerBlue', color = 'blue') %>% 
+  column_spec(4, background = 'grey', color = 'white') %>% 
+  row_spec(9, bold = T, color = 'yellow', background = '#D7261E')
 
 rm(sys1, sys2)
+sys
 ```
+
+<br><br>
 
 ## Reference
 

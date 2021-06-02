@@ -1,7 +1,7 @@
 ---
 title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
 subtitle: "[Building R Packages](https://www.coursera.org/learn/r-packages) <img src='figure/jhu.jpg' width='100'>"
-author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba2.jpg' width='14'>"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
   html_document: 
@@ -1458,7 +1458,8 @@ fars_map_state <- function(state.num, year) {
         is.na(data.sub$LONGITUD) <- data.sub$LONGITUD > 900
         is.na(data.sub$LATITUDE) <- data.sub$LATITUDE > 90
         with(data.sub, {
-                maps::map("state", ylim = range(LATITUDE, na.rm = TRUE),
+                maps::map("state", 
+                          ylim = range(LATITUDE, na.rm = TRUE),
                           xlim = range(LONGITUD, na.rm = TRUE))
                 graphics::points(LONGITUD, LATITUDE, pch = 46)
         })

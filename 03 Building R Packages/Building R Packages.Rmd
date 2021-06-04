@@ -1402,7 +1402,7 @@ what each function does, in general terms;
 
 ## My submission
 
-Please upload the file 'fars_functions.R' containing the roxygen2-style documentation that you have written for the supplied functions.
+Please upload the file `fars_functions.R` containing the roxygen2-style documentation that you have written for the supplied functions.
 
 # Assignment 2 (Answer)
 
@@ -1476,7 +1476,7 @@ if(!dir.exists('farsdata')) {
 
 fileConn <- file('farsdata/R/fars_functions.R')
 writeLines(c(
-"fars_read <- function(filename) { if(!file.exists(filename)) stop(\"file '\", filename, \"' does not exist\"); data <- suppressMessages({readr::read_csv(filename, progress = FALSE)}); dplyr::tbl_df(data) }", 
+"fars_read <- function(filename) { if(!file.exists(filename)) stop(\"file '\", filename, \"' does not exist\"); data <- suppressMessages({readr::read_csv(filename, progress = FALSE)}); tibble(data) }", 
 
 "make_filename <- function(year) { year <- as.integer(year); sprintf(\"accident_%d.csv.bz2\", year) }", 
 

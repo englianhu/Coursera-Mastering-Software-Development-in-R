@@ -46,7 +46,7 @@ separate color. There is a column in the data called id that gives the unique id
 Which of the following choices is a good strategy
 for creating a plot where data points use color to identify the subject? 1点
 
--1@ Leave the id column of the data frame as a numeric, so a continuous color palette will be used, and use ggplot to create a scatterplot, then use + to add the element color(aes(id)).
+- Leave the id column of the data frame as a numeric, so a continuous color palette will be used, and use ggplot to create a scatterplot, then use + to add the element color(aes(id)).
 
 Example code:
   
@@ -57,7 +57,7 @@ df %>%
   color(aes(id))
 ```
 
--3@ Convert the id column of the data frame to a factor, so a discrete color palette will be used, then use ggplot to create a scatterplot and specify color
+- Convert the id column of the data frame to a factor, so a discrete color palette will be used, then use ggplot to create a scatterplot and specify color
 = id as the sole argument in the geom_point() call.
 
 Example code: 
@@ -69,7 +69,7 @@ df %>%
   geom_point(color = id)
 ```
 
--2@ Leave the id column of the data frame as a numeric, so a continuous color palette will be used, then use ggplot2 to create a scatterplot and specify color = id in the aes() section of the ggplot() call.  
+- Leave the id column of the data frame as a numeric, so a continuous color palette will be used, then use ggplot2 to create a scatterplot and specify color = id in the aes() section of the ggplot() call.  
 
 Example code:
   
@@ -79,7 +79,7 @@ df %>%
   geom_point()
 ```
 
-- Convert the id column of the data frame to a factor, so a discrete color palette will be used, then use ggplot2 to create a scatterplot and specify
+-✔️ Convert the id column of the data frame to a factor, so a discrete color palette will be used, then use ggplot2 to create a scatterplot and specify
 color = id in the aes() section of the ggplot() call.  
 
 Example code:
@@ -185,55 +185,55 @@ You want to create a scatter plot showing Girth on the x-axis, Height on the y-a
 
 Which of the following code would create that plot? 1点
 
--@ 
+- 
 ```
 ggplot(trees, aes(x = Girth, y = Height, size = Volume)) +
   geom_point()
 ```
 
--@
+-
 ```
 trees %>%
   ggplot(aes(x = Girth, y = Height)) +
   geom_point(size = Volume)
 ```
 
--@
+-@0.5
 ```
 ggplot() +
   geom_point(data = trees,
              aes(x = Girth, y = Height, size = Volume))
 ```
 
--@
+-@0.5
 ```
 trees %>%
   ggplot(aes(x = Girth, y = Height)) +
   geom_point(aes(size = Volume))
 ```
 
--@
+-
 ```
 trees %>%
   ggplot() +
   geom_point(x = Girth, y = Height, size = Volume)
 ```
 
--@
+-@0.5
 ```
 ggplot() +
   geom_point(trees,
              aes(x = Girth, y = Height, size = Volume))
 ```
 
--@
+-@0.5
 ```
 trees %>%
   ggplot(aes(x = Girth, y = Height, size = Volume)) +
   geom_point()
 ```
 
--@
+-@0.5
 ```
 trees %>%
   ggplot() +
@@ -257,7 +257,7 @@ What does geom_smooth(method = "lm") do when it is added to a ggplot object? 1�
 
 -1@ It adds a palette of colors for plotting the points in a scatterplot
 -2@ It adds a fitted linear regression line to the plot
-- It adds transparency to the points to avoid over plotting
+-4@ It adds transparency to the points to avoid over plotting
 -3@ It adds a nonlinear smoother to the plot
 
 

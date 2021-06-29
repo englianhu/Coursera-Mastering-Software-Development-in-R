@@ -18,10 +18,10 @@ head(us_map, 3)
 ```
 If you wanted to use this data to map the outline of the United States without converting the data to a spatial object, how would you map aesthetics in the ggplot call, and which geom would you add? 1点
 
--1@ For the aesthetics, I would map long to x, lat to y, and group to group. I would then add a line geom. 
-- For the aesthetics, I would map long to x, lat to y, and group to group. I would then add a path geom. 
--2@ For the aesthetics, I would map lat to x, long to y, and group to group. I would then add a line geom. 
--3@ For the aesthetics, I would map lat to x and long to y. I would then add a polygon geom. 
+- For the aesthetics, I would map long to x, lat to y, and group to group. I would then add a line geom. 
+-✔️ For the aesthetics, I would map long to x, lat to y, and group to group. I would then add a path geom. 
+- For the aesthetics, I would map lat to x, long to y, and group to group. I would then add a line geom. 
+- For the aesthetics, I would map lat to x and long to y. I would then add a polygon geom. 
 
 
 2. 質問 2
@@ -185,8 +185,8 @@ USArrests %>%
 Which of the following statements are true about this code? 1点
 
 -@ The code is using piping (using %>% from the dplyr package) to clean up and join together geospatial data (state borders) with the USArrests data frame, and then piping this into ggplot2 functions to create the map.
--@ The data on state boundaries used to create this map must be in a spatial object.
--@ The theme is added to the ggplot object to prevent x- and y-axes, x- and y-axis labels, and the background grid from being included on the final map.
+- The data on state boundaries used to create this map must be in a spatial object.
+- The theme is added to the ggplot object to prevent x- and y-axes, x- and y-axis labels, and the background grid from being included on the final map.
 - The theme is added to the ggplot object to clear off previous points plotted on the object.
 -@ The map would have looked exactly the same if the Murder variable were mapped to color rather than fill.
 -@ The group aesthetic is mapped to the group column in the data to create separate polygons for each state and to prevent unwanted lines between the borders of different states.

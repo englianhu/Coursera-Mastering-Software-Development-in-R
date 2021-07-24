@@ -2855,4 +2855,21 @@ sys
 ## Reference
 
 01. [Mastering Software Development in R (web-base)](https://bookdown.org/rdpeng/RProgDA/). (or [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf))
-2. [`BFavetto/fars`](https://github.com/BFavetto/fars)
+02. [`BFavetto/fars`](https://github.com/BFavetto/fars)
+03. <https://github.com/kanpurtoublin/courseraAssignment>
+04. <https://github.com/johnxz/farsr>
+05. <https://github.com/SondergardM/FARSpkg>
+06. <https://github.com/kkolmus/MolecularAnalyzeR>
+07. <https://github.com/KrisHuang00/R-packages.git>
+08. <https://github.com/FerrieHeskes/Deel3-week2/>
+09. <https://github.com/shubh-b/FARS>
+10. <https://github.com/FerrieHeskes/Deel3-week2/>
+11. <https://github.com/tchoffman/bldgRpkg>
+12. <https://github.com/JoeHarkness/FARS>
+13. <https://github.com/wjnaramore/fars>
+14. <https://github.com/plexxx/myAssignment>
+15. <https://github.com/prathmeshchaudhari/Package>
+16. <https://github.com/kkolmus/MolecularAnalyzeR>
+17. <https://github.com/RobertHagan/DaysSinceWhen>
+18. <https://github.com/jsdeherrera/prioritizationMatrix>
+

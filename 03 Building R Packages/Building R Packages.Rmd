@@ -2872,4 +2872,34 @@ sys
 16. <https://github.com/kkolmus/MolecularAnalyzeR>
 17. <https://github.com/RobertHagan/DaysSinceWhen>
 18. <https://github.com/jsdeherrera/prioritizationMatrix>
+19. <https://github.com/maijuli04/classproject>
+20. <https://github.com/friveramariani/fars>
+21. <https://github.com/friveramariani/fars>
+22. <https://github.com/Darwinita/FARSpackageLCP>
+23. <https://github.com/ricrossi/qfars>
+24. <https://github.com/RobertHagan/DaysSinceWhen>
+25. <https://github.com/RobertHagan/DaysSinceWhen>
+26. <https://github.com/MoRudyKim/farsfunc>
+27. <https://github.com/MoRudyKim/farsfunc>
+28. <https://github.com/urieduardo/farsfunctions/>
+29. <https://github.com/urieduardo/farsfunctions/>
+30.<https://github.com/urieduardo/farsfunctions/>
+31. <https://github.com/urieduardo/farsfunctions/>
+32. <https://github.com/urieduardo/farsfunctions/>
+33. <https://github.com/sophiasagan/farsfunc2>
+34. <https://github.com/jlb226/FARS>
+35. <https://github.com/jlb226/FARS>
+36. <https://github.com/Zaskya/Building-an-R-Package>
+37. <https://github.com/jorgeb49/farspack/>
+38. <https://github.com/jorgeb49/farspack/>
+39. <https://github.com/MMJansen/MyFarsPackage3>
+40. <https://github.com/Zaskya/Building-an-R-Packageno>
+
+41. <https://github.com/balshaq/latest>
+42. <https://github.com/mnoro/numpack99>
+43. <https://github.com/Souravp33/RPackageBuilt>
+44. <https://github.com/Matthew-MacLeod-gc/Week4MRM>
+45. <https://github.com/afterafx/courseraPack>
+
+
 

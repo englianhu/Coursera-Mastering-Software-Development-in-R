@@ -2947,7 +2947,7 @@ sys
 90. <https://github.com/engAnt/week4pkg>
 91. <https://github.com/anubhavj/Coursera3Sub>
 92. **<https://github.com/CorradoLanera/weektwo>**
-93. 
+93. <https://github.com/latsa001/Coursera-Assignment-Build-an-R-Package>
 94. <https://github.com/Jaimores/Activity1>
 
 

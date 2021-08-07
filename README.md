@@ -1,5 +1,7 @@
 # Coursera Mastering Software Development in R
 
+[![Jekyll site CI](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml)
+
 ## Index
 
 Specialization : [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r)
@@ -46,6 +48,11 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 Kindly refer to [The `farsdata` R Package](https://github.com/englianhu/farsdata) which is my R package repo for the assignment.
 
 ## Course 4 : Building Data Visualization Tools
+
+- Week 1 : Welcome to Building Data Visualization Tools
+- Week 2 : Mapping and interactive plots
+- Week 3 : The grid Package
+- Week 4 : Building New Graphical Elements
 
 ## Course 5 : Mastering Software Development in R Capstone
 

@@ -45,7 +45,7 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 - Week 3 : Licensing, Version Control, and Software Design
 - Week 4 : Continuous Integration and Cross Platform Development
 
-Kindly refer to [The `farsdata` R Package](https://github.com/englianhu/farsdata) which is my R package repo for the assignment.
+Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(previous [The `farsdata` R Package](https://github.com/englianhu/farsdata)) which is my R package repo for the assignment.
 
 ## Course 4 : Building Data Visualization Tools
 
@@ -55,6 +55,13 @@ Kindly refer to [The `farsdata` R Package](https://github.com/englianhu/farsdata
 - Week 4 : Building New Graphical Elements
 
 ## Course 5 : Mastering Software Development in R Capstone
+
+- Week 1 : Obtain and Clean the Data
+- Week 2 : Building Geoms
+- Week 3 : Building a Leaflet Map
+- Week 4 : Documentation and Packaging
+- Week 5 : Deployment
+- Week 6 : Final Assessment
 
 ## Miscellaneous
 

@@ -6,8 +6,8 @@ Specialization : [Mastering Software Development in R Specialization](https://ww
 
 - Course 1 : [The R Programming Environment](http://rpubs.com/englianhu/the-r-programming-environment)
 - Course 2 : [Advanced R Programming](http://rpubs.com/englianhu/advanced-r-programming)
-- Course 3 : Building R Packages
-- Course 4 : Building Data Visualization Tools
+- Course 3 : [Building R Packages](https://www.coursera.org/learn/r-packages)
+- Course 4 : [Building Data Visualization Tools](https://www.coursera.org/learn/r-data-visualization)
 - Course 5 : Mastering Software Development in R Capstone
 
 There is a manual [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf) for these courses.

@@ -12,7 +12,7 @@ Specialization : [Mastering Software Development in R Specialization](https://ww
 - Course 4 : [Building Data Visualization Tools](https://www.coursera.org/learn/r-data-visualization)
 - Course 5 : Mastering Software Development in R Capstone
 
-There is a manual [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf) for these courses.
+There is a manual [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf) for these courses. An additional and completed bookdown web-based manual on [Mastering Software Development in R](https://bookdown.org/rdpeng/RProgDA/).
 
 ## Course 1 : The R Programming Environment
 

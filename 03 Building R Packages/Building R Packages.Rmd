@@ -2688,7 +2688,7 @@ Are examples of the functions' usage provided in the documentation?
 97. <https://github.com/JohnBezodis/JHU.Assessment>
 98. <https://github.com/jasonshen88/FarsFunction>
 99. <https://github.com/cesarkero/W4Assigment>
-100. <>
+100. <https://github.com/utkarshphirke/fars>
 101. <>
 102. <>
 103. <>

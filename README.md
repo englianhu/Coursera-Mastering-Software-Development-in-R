@@ -69,7 +69,7 @@ Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(p
 
 ## Miscellaneous
 
-There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course.
+There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course (folders inside repo).
 
 ## Reference
 

@@ -2888,11 +2888,9 @@ Are the build logs for this package on Travis free of any errors, warnings, or n
 
 # Conclusion
 
-Final Scores : `xx/100`
+Final Scores : `90/100`
 
-```
-![*Source :* [*Advanced R Programming*](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/tree/master/Advanced%20R%20Programming/Coursera%2002%20Advanced%20R%20Programming.pdf)](figure/certificate.jpg)
-```
+![*Source :* [*Building R Packages*](https://www.coursera.org/learn/r-packages/home/welcome)](figure/Coursera - Building R Packages.png.jpg)
 
 ```{r option, echo = FALSE}
 ## Set options back to original options

@@ -2890,7 +2890,7 @@ Are the build logs for this package on Travis free of any errors, warnings, or n
 
 Final Scores : `90/100`
 
-![*Source :* [*Building R Packages*](https://www.coursera.org/learn/r-packages/home/welcome)](figure/Coursera - Building R Packages.png.jpg)
+![*Source :* [*Building R Packages*](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/master/03%20Building%20R%20Packages/figure/Coursera%20-%20Building%20R%20Packages.png)](figure/Coursera - Building R Packages.png.jpg)
 
 ```{r option, echo = FALSE}
 ## Set options back to original options

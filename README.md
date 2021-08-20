@@ -14,7 +14,7 @@ Specialization : [Mastering Software Development in R Specialization](https://ww
 - Course 2 : [Advanced R Programming](http://rpubs.com/englianhu/advanced-r-programming)
 - Course 3 : [Building R Packages](https://www.coursera.org/learn/r-packages)
 - Course 4 : [Building Data Visualization Tools](https://www.coursera.org/learn/r-data-visualization)
-- Course 5 : Mastering Software Development in R Capstone
+- Course 5 : [Mastering Software Development in R Capstone](https://www.coursera.org/learn/r-capstone)
 
 There is a manual [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf) for these courses. An additional and completed bookdown web-based manual on [Mastering Software Development in R](https://bookdown.org/rdpeng/RProgDA/).
 
@@ -68,6 +68,10 @@ Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(p
 - Week 6 : Final Assessment
 
 ## Miscellaneous
+
+There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course.
+
+## Reference
 
 - [Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222) introduce some useful functions and also packages for R users.
 - [Advanced R](http://adv-r.had.co.nz) designed primarily for R users who want to improve their programming skills and understanding of the language. It should also be useful for programmers coming to R from other languages, as it explains some of R's quirks and shows how some parts that seem horrible do have a positive side.

@@ -159,6 +159,90 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)#,
 rm(pkgs)
 ```
 
+# Assignment
+
+## 受講生によるテスト：Documentation, Packaging, and Testing
+
+**他の受講生の課題をレビューする**
+
+課題の提出、お疲れさまでした！これで、他の受講生がレビューできます。成績を受け取るには、他の受講生の課題もいくつかレビューする必要があります。 成績は`8月26日 15:59 JST`までに受け取れるでしょう。
+
+### 説明
+
+### 自分の提出物
+
+In this assignment, you will briefly review your some work submitted by your classmates. This is a low-stakes opportunity to get and give some feedback so that everyone can stay on track.  
+
+*Review criteria*
+
+Commit your package to GitHub after you've added documentation and tests for your package. You and your peers will grade each other on the following criteria:
+
+- Does the package contain help files for each function?
+- Are there examples in the help files for each function?
+- Does the package have a NAMESPACE file?
+- Is every function in the package tested?
+- Is every function in the package demonstrated in the vignette?
+
+### ディスカッション
+
+# My Assignment
+
+<https://github.com/AndersonUyekita/JHU_MSDR_Capstone>
+
+# Peer Review
+
+## Repos
+
+01. <https://github.com/SondergardM/MSDRCapstone>
+02. <https://github.com/adeel1997/noaaquake>
+03. <https://github.com/lemonad/coursera-mastering-r-capstone>
+04. <https://github.com/njoysavi/RCapstone>
+05. <https://github.com/PatGruetter/NOAAPackage>
+06. <https://github.com/kamenbliznashki/noaaeq>
+07. <https://github.com/vnmath/SoftwareDevinR>
+08. **<https://github.com/hsm-stephanie/earthquake>**
+09. <https://github.com/kevin444/RpackageCoursera>
+10. <https://github.com/BouranDS/My_Capstone>
+11. **<https://github.com/rsizem2/noaa-earthquakes>**
+12. **<https://github.com/nandinigntr/MSDR>**
+13. <https://github.com/sheila-NAA/Documentation>
+14. <https://github.com/lakrobinson/noaar>
+15. <https://github.com/lmata22/Documentation-Packaging-and-Testing>
+16. <https://github.com/esteeb/RProgCapstone>
+17. **<https://github.com/AndersonUyekita/JHU_MSDR_Capstone>**
+18. **<https://github.com/CorradoLanera/devrcap>**
+19. <>
+20. <>
+
+## ルーブリック
+
+Qualitative feedback is the most important part of this evaluation. Use this space below to let your classmate know how they are doing. Does their project appear to be on the right track? What are its strengths and flaws. Be constructive.
+
+Does the package contain help files for each function?
+
+- 1点 Yes	
+- 0点 No
+
+Are there examples in the help files for each function?
+
+- 1点 Yes
+- 0点 No
+
+Does the package have a NAMESPACE file?
+
+- 1点 Yes
+- 0点 No
+
+Is every function in the package tested?
+
+- 1点 Yes
+- 0点 No
+
+Is every function in the package demonstrated in the vignette?
+
+- 1点 Yes
+- 0点 No
+
 # Conclusion
 
 ## Summary

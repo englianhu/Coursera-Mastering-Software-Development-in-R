@@ -4,7 +4,8 @@
 
 # Coursera Mastering Software Development in R
 
-[![Jekyll site CI](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml)
+[![Jekyll site CI](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml) [![R](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/r.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/r.yml)
+
 
 ## Index
 

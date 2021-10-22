@@ -1,15 +1,10 @@
 ---
-title: <img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org)
-  - An Online Learning Platform
-author: '[®γσ, Lian Hu](https://englianhu.github.io/) <img src=''figure/quantitative
-  trader 1.jpg'' width=''13''> <img src=''figure/RYU.jpg'' width=''15''> <img src=''figure/ENG.jpg''
-  width=''24''> ® 新<img src=''figure/xueba1.jpg'' width=''14''>'
+title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
+subtitle: "[Capstone](https://www.coursera.org/learn/r-capstone/home/welcome) <img src='figure/jhu.jpg' width='100'>"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '4'
-  html_document:
+  html_document: 
     mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     number_sections: yes
     toc: yes
@@ -19,8 +14,6 @@ output:
       smooth_scroll: yes
     code_folding: hide
     css: CSSBackgrounds.css
-subtitle: '[Capstone](https://www.coursera.org/learn/r-capstone/home/welcome) <img
-  src=''figure/jhu.jpg'' width=''100''>'
 ---
 
 <br>

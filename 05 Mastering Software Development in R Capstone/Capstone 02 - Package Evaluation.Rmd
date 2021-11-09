@@ -8,7 +8,7 @@ output:
     mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     number_sections: yes
     toc: yes
-    toc_depth: 4
+    toc_depth: 6
     toc_float:
       collapsed: yes
       smooth_scroll: yes
@@ -161,11 +161,11 @@ rm(pkgs)
 
 # Assignment
 
-## 受講生によるテスト：Documentation, Packaging, and Testing
+## 受講生によるテスト：Package Evaluation
 
 **他の受講生の課題をレビューする**
 
-課題の提出、お疲れさまでした！これで、他の受講生がレビューできます。成績を受け取るには、他の受講生の課題もいくつかレビューする必要があります。 成績は`8月26日 15:59 JST`までに受け取れるでしょう。
+課題の提出、お疲れさまでした！これで、他の受講生がレビューできます。成績を受け取るには、他の受講生の課題もいくつかレビューする必要があります。 成績は`9月9日 15:59 JST`によるレビュー。
 
 ### 説明
 
@@ -175,75 +175,112 @@ In this assignment, you will briefly review your some work submitted by your cla
 
 *Review criteria*
 
-Commit your package to GitHub after you've added documentation and tests for your package. You and your peers will grade each other on the following criteria:
+Your package must abide by the following criteria in order to receive full marks on this assignment:
 
-- Does the package contain help files for each function?
-- Are there examples in the help files for each function?
-- Does the package have a NAMESPACE file?
-- Is every function in the package tested?
-- Is every function in the package demonstrated in the vignette?
+- Your package must be hosted on GitHub. You will be providing the URL to your package on GitHub so that other students can evaluate your work.
+- Your package must at least contain the following directories: R, man, tests, vignettes.
+- Your package must at least contain the following files: `.travis.yml`, `DESCRIPTION`, `LICENSE`, `NAMESPACE`, `README.md`.
+- Every function in your package must have a corresponding test.
+- Every function in your package must have at least one example in its documentation.
+- Your package must have a `vignette` which provides an explanation of the purpose for your package and how it could be used. The vignette should include examples for every function that is exported in the package's NAMESPACE file.
+- A `Travis` badge that says "build passing" that is linked to your package's `Travis` build should appear at the top of your `README.md` file on GitHub.
+- Your package must be tested using `Travis`. There should be no errors, warnings, or notes at the end of your Travis build, and all of your tests should be run on Travis.
 
 ### ディスカッション
 
 # My Assignment
 
-<https://github.com/AndersonUyekita/JHU_MSDR_Capstone>
+<https://github.com/englianhu/JHU_MSDR_Capstone>
+<https://github.com/englianhu/MSDRCapstone>
 
 # Peer Review
 
 ## Repos
 
 01. <https://github.com/SondergardM/MSDRCapstone>
-02. <https://github.com/adeel1997/noaaquake>
-03. <https://github.com/lemonad/coursera-mastering-r-capstone>
-04. <https://github.com/njoysavi/RCapstone>
-05. <https://github.com/PatGruetter/NOAAPackage>
-06. <https://github.com/kamenbliznashki/noaaeq>
-07. <https://github.com/vnmath/SoftwareDevinR>
-08. **<https://github.com/hsm-stephanie/earthquake>**
-09. <https://github.com/kevin444/RpackageCoursera>
-10. <https://github.com/BouranDS/My_Capstone>
-11. **<https://github.com/rsizem2/noaa-earthquakes>**
-12. **<https://github.com/nandinigntr/MSDR>**
-13. <https://github.com/sheila-NAA/Documentation>
-14. <https://github.com/lakrobinson/noaar>
-15. <https://github.com/lmata22/Documentation-Packaging-and-Testing>
-16. <https://github.com/esteeb/RProgCapstone>
-17. **<https://github.com/AndersonUyekita/JHU_MSDR_Capstone>**
-18. **<https://github.com/CorradoLanera/devrcap>**
-19. <https://github.com/rahoma615/Building_R_Packages>
-20. <https://github.com/egarx/MSDProjectS>
-21. <https://github.com/cunningloki/Mastering-Software-Development-in-R-Capstone>
-22. <>
+02. **<https://github.com/AndersonUyekita/JHU_MSDR_Capstone>**
+03. **<https://github.com/CorradoLanera/devrcap>**
+04. <https://github.com/MagdyLaban/Mastering_Software_Development_in_R_Capstone_Coursera>
 
 ## ルーブリック
 
-Qualitative feedback is the most important part of this evaluation. Use this space below to let your classmate know how they are doing. Does their project appear to be on the right track? What are its strengths and flaws. Be constructive.
+Please use this space to provide substantive feedback. Point out the package's strengths as well as areas that could be improved. Be constructive. 
 
-Does the package contain help files for each function?
+```
 
-- 1点 Yes	
-- 0点 No
+```
 
-Are there examples in the help files for each function?
+There are four required directories that should be present in this package: `R`, `man`, `tests`, and `vignettes`. How many of these directories are included in this package?
+
+- 0点 None out of `R`, `man`, `tests`, and `vignettes`.
+- 1点 One out of `R`, `man`, `tests`, and `vignettes`.
+- 2点 Two out of `R`, `man`, `tests`, and `vignettes`.
+- 3点 Three out of `R`, `man`, `tests`, and `vignettes`.
+- 4点 Four out of `R`, `man`, `tests`, and `vignettes`.
+
+There are five required files that should be present in this package: `.travis.yml`, `DESCRIPTION`, `LICENSE`, `NAMESPACE`, and `README.md`. How many of these files are included in this package?
+
+- 0点 None out of .travis.yml, DESCRIPTION, LICENSE, NAMESPACE, and README.md.
+
+- 1点 One out of .travis.yml, DESCRIPTION, LICENSE, NAMESPACE, and README.md.
+
+- 2点 Two out of .travis.yml, DESCRIPTION, LICENSE, NAMESPACE, and README.md.
+
+- 3点 Three out of .travis.yml, DESCRIPTION, LICENSE, NAMESPACE, and README.md.
+
+- 4点 Four out of .travis.yml, DESCRIPTION, LICENSE, NAMESPACE, and README.md.
+
+- 5点 Five out of .travis.yml, DESCRIPTION, LICENSE, NAMESPACE, and README.md.
+
+Does every function in the package have a corresponding test?
+
+- 0点 There are no tests in this package.
+
+- 1点 There are some tests in this package, but not every function is tested.
+
+- 3点 Every function in the package has a corresponding test.
+
+Does every function in the package have at least one example in its documentation?
+
+- 0点 There are no examples in the documentation for any function.
+
+- 1点 Some functions have examples, but some don't.
+
+- 3点 Every function in the package have at least one example in its documentation.
+
+Does the package contain a vignette?
 
 - 1点 Yes
 - 0点 No
 
-Does the package have a NAMESPACE file?
+In the vignette is there an explanation of the purpose for the package and how it could be used?
 
 - 1点 Yes
 - 0点 No
 
-Is every function in the package tested?
+Does the vignette include examples for every function that is exported in the package's NAMESPACE file?
 
-- 1点 Yes
+- 0点 The vignette does not exist or it does not contain any examples.
+
+- 1点 The vignette contains some examples but not an example for every function.
+
+- 3点 The vignette includes examples for every function that is exported in the package's NAMESPACE file.
+
+Is there a Travis badge that says "build passing" at the top of the README.md file, and when you click on the Travis badge does Travis' webpage for the package open up in your web browser?
+
+- 2点 Yes
 - 0点 No
 
-Is every function in the package demonstrated in the vignette?
+Does the package build on Travis, with all of the tests running, and without any errors, warnings, or notes?
 
-- 1点 Yes
+- 2点 Yes
 - 0点 No
+
+Please use this space to clarify any grading decisions that might need an explanation.
+
+```
+
+```
 
 # Conclusion
 

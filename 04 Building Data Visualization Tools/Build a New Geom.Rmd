@@ -237,7 +237,3 @@ sys
 1) [High-Performance Time Series Forecasting in R & Python](https://www.youtube.com/watch?v=elQb4VzRINg)
 
 2) [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3)
-
----
-
-<span style='color:RoyalBlue'>**Powered by - Copyright® Intellectual Property Rights of <img src='www/scb-logo3rs.jpg' width='24'> [Sςιβrοκεrs Trαdιηg®️](http://www.scibrokes.com)経営企業**</span>

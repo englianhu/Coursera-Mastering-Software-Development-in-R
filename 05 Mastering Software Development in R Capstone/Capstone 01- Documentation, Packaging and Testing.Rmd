@@ -1,26 +1,19 @@
 ---
-title: <img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org)
-  - An Online Learning Platform
-author: '[®γσ, Lian Hu](https://englianhu.github.io/) <img src=''figure/quantitative
-  trader 1.jpg'' width=''13''> <img src=''figure/RYU.jpg'' width=''15''> <img src=''figure/ENG.jpg''
-  width=''24''> ® 新<img src=''figure/xueba1.jpg'' width=''14''>'
+title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
+subtitle: "[Capstone](https://www.coursera.org/learn/r-capstone/home/welcome) <img src='figure/jhu.jpg' width='100'>"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '4'
-  html_document:
+  html_document: 
     mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     number_sections: yes
     toc: yes
-    toc_depth: 4
+    toc_depth: 6
     toc_float:
       collapsed: yes
       smooth_scroll: yes
     code_folding: hide
     css: CSSBackgrounds.css
-subtitle: '[Capstone](https://www.coursera.org/learn/r-capstone/home/welcome) <img
-  src=''figure/jhu.jpg'' width=''100''>'
 ---
 
 <br>
@@ -100,7 +93,7 @@ options(width = 999)
 knitr::opts_chunk$set(class.source = 'hover01', class.output = 'hover02', class.error = 'hover03')
 ```
 
-<br><br>
+<br>
 
 ## Setup
 
@@ -166,6 +159,8 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)#,
 rm(pkgs)
 ```
 
+<br><br>
+
 # Assignment
 
 ## 受講生によるテスト：Documentation, Packaging, and Testing
@@ -192,9 +187,14 @@ Commit your package to GitHub after you've added documentation and tests for you
 
 ### ディスカッション
 
+<br><br>
+
 # My Assignment
 
-<https://github.com/AndersonUyekita/JHU_MSDR_Capstone>
+<https://github.com/englianhu/JHU_MSDR_Capstone>
+<https://github.com/englianhu/MSDRCapstone>
+
+<br><br>
 
 # Peer Review
 
@@ -221,7 +221,8 @@ Commit your package to GitHub after you've added documentation and tests for you
 19. <https://github.com/rahoma615/Building_R_Packages>
 20. <https://github.com/egarx/MSDProjectS>
 21. <https://github.com/cunningloki/Mastering-Software-Development-in-R-Capstone>
-22. <>
+
+<br>
 
 ## ルーブリック
 
@@ -252,16 +253,22 @@ Is every function in the package demonstrated in the vignette?
 - 1点 Yes
 - 0点 No
 
+<br><br>
+
 # Conclusion
 
 ## Summary
 
 ## Final Conclude
 
+![Awarded on `08 Nov 2021`](figure/Coursera 05 - Mastering Software Development in R Capstone.png)
+
 ```{r opt, echo = FALSE}
 ## Set options back to original options
 options(warn = 0)
 ```
+
+<br><br>
 
 # Appendix
 
@@ -331,4 +338,4 @@ sys
 
 ---
 
-<span style='color:RoyalBlue'>**Powered by - Copyright® Intellectual Property Rights of <img src='www/scb-logo3rs.jpg' width='24'> [Sςιβrοκεrs Trαdιηg®️](http://www.scibrokes.com)経営企業**</span>
+<span style='color:RoyalBlue'>**Powered by - Copyright® Intellectual Property Rights of <img src='figure/Scibrokes.png' width='24'> [Sςιβrοκεrs Trαdιηg®️](http://www.scibrokes.com)経営企業**</span>

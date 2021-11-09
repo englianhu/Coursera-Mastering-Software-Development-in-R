@@ -77,3 +77,7 @@ There have a `RMarkdown` file and also a copy of `pdf` and `png` format certific
 - [Dynamic Documents for R using R Markdown](https://rpubs.com/moviedo/322222) introduce some useful functions and also packages for R users.
 - [Advanced R](http://adv-r.had.co.nz) designed primarily for R users who want to improve their programming skills and understanding of the language. It should also be useful for programmers coming to R from other languages, as it explains some of R's quirks and shows how some parts that seem horrible do have a positive side.
 - [Efficient R programming](https://csgillespie.github.io/efficientR) teach us how to use R programming efficiently.
+
+------
+
+<span style='color:RoyalBlue'>**Powered by - Copyright® Intellectual Property Rights of <img src='figure/Scibrokes.png' width='24'> [Sςιβrοκεrs Trαdιηg®️](http://www.scibrokes.com)経営企業**</span>

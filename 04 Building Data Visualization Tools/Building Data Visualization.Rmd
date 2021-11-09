@@ -1,10 +1,11 @@
 ---
 title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
 subtitle: "[Plotting with ggplot2](https://www.coursera.org/learn/r-data-visualization) <img src='figure/jhu.jpg' width='100'>"
-author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/RYO.jpg' width='24'> <img src='figure/RYU.jpg' width='24'> <img src='figure/ENG.jpg' width='24'>®"
+author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
   html_document: 
+    mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     number_sections: yes
     toc: yes
     toc_depth: 4
@@ -12,7 +13,89 @@ output:
       collapsed: yes
       smooth_scroll: yes
     code_folding: hide
+    css: CSSBackgrounds.css
 ---
+
+<br>
+<span style='color:green'>**Theme Song**</span>
+<br>
+
+<audio controls loop autoplay src="music/F4 - Can't Help Falling In Love With You (chorus).mp3" controls></audio>
+<br>
+
+------
+
+# Setting
+
+## SCSS Setup
+
+<style>
+pre {
+  overflow-x: auto;
+}
+pre code {
+  word-wrap: normal;
+  white-space: pre;
+}
+.table-hover > tbody > tr:hover { 
+  background-color: #8D918D;
+}
+</style>
+
+```{r class.source='bg-success', class.output='bg-primary', message = FALSE, warning = FALSE}
+# install.packages("remotes")
+library('BBmisc', 'rmsfuns')
+#remotes::install_github("rstudio/sass")
+lib('sass')
+```
+
+```{scss class.source='bg-success', class.output='bg-primary'}
+/* https://stackoverflow.com/a/66029010/3806250 */
+h1 { color: #002C54; }
+h2 { color: #2F496E; }
+h3 { color: #375E97; }
+h4 { color: #556DAC; }
+h5 { color: #92AAC7; }
+
+/* ----------------------------------------------------------------- */
+/* https://gist.github.com/himynameisdave/c7a7ed14500d29e58149#file-broken-gradient-animation-less */
+.hover01 {
+  /* color: #FFD64D; */
+  background: linear-gradient(155deg, #EDAE01 0%, #FFEB94 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #EDAE01 20%, #FFEB94 80%);
+    }
+  }
+
+.hover02 {
+  color: #FFD64D;
+  background: linear-gradient(155deg, #002C54 0%, #4CB5F5 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #002C54 20%, #4CB5F5 80%);
+    }
+  }
+
+.hover03 {
+  color: #FFD64D;
+  background: linear-gradient(155deg, #A10115 0%, #FF3C5C 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #A10115 20%, #FF3C5C 80%);
+    }
+  }
+```
+
+```{r global_options, class.source='hover01', class.output='hover02'}
+## https://stackoverflow.com/a/36846793/3806250
+options(width = 999)
+knitr::opts_chunk$set(class.source = 'hover01', class.output = 'hover02', class.error = 'hover03')
+```
+
+<br><br>
+
+## Setup
 
 ```{r setup}
 suppressPackageStartupMessages(library('BBmisc'))
@@ -502,11 +585,9 @@ ans:1,2,3 (0.25/1 point)
 
 # Conclusion
 
-Final Scores : `xx/100`
+![Awarded on `06 Aug 2021`](figure/04 Building Data Visualization Tools.png)
 
-```
-![*Source :* [*The R Programming Environment*](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/tree/master/The%20R%20Programming%20Environment/Coursera%2001%20The%20R%20Programming%20Environment.pdf)](figure/certificate.jpg)
-```
+Final Scores : `xx/100`
 
 ```{r option, echo = FALSE}
 ## Set options back to original options
@@ -517,50 +598,58 @@ options(warn = 0)
 
 ## Documenting File Creation 
 
-It's useful to record some information about how your file was created.
-
-- File creation date: 2018-11-09
+- File creation date: 2021-07-27
 - File latest updated date: `r today('Asia/Tokyo')`
 - `r R.version.string`
-- R version (short form): `r getRversion()`
-- [**rmarkdown** package](https://github.com/rstudio/rmarkdown) version: `r packageVersion('rmarkdown')`
-- File version: 1.0.1
-- Author Profile: [®γσ, Eng Lian Hu](https://beta.rstudioconnect.com/content/3091/ryo-eng.html)
+- [rmarkdown](https://github.com/rstudio/rmarkdown) package version: `r packageVersion('rmarkdown')`
+- File version: 0.2.1
+- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
 - GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
 - Additional session information:
 
-```{r info, echo=FALSE, warning=FALSE, results='asis'}
+```{r info, warning = FALSE, results = 'asis'}
 suppressMessages(require('dplyr', quietly = TRUE))
+suppressMessages(require('magrittr', quietly = TRUE))
 suppressMessages(require('formattable', quietly = TRUE))
 suppressMessages(require('knitr', quietly = TRUE))
 suppressMessages(require('kableExtra', quietly = TRUE))
 
-sys1 <- devtools::session_info()$platform %>% 
-  unlist %>% 
-  data.frame(Category = names(.), session_info = .)
-rownames(sys1) <- NULL
+sys1 <- devtools::session_info()$platform |> 
+    unlist() |> 
+    {\(.) data.frame(row.names = 1:length(.), 
+                     Category = names(.), session_info = .)}()
 
-sys2 <- data.frame(Sys.info()) %>% 
-  mutate(Category = rownames(.)) %>% 
-  .[2:1]
-names(sys2)[2] <- c('Sys.info')
-rownames(sys2) <- NULL
+sys2 <- data.frame(Sys.info()) |> 
+    {\(.) data.frame(Category = row.names(.), Sys.info = .[,1])}()
 
-if (nrow(sys1) == 7 & nrow(sys2) == 8) {
-  sys1 %<>% rbind(., data.frame(
-  Category = 'Current time', 
-  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
+if (nrow(sys1) == 11 & nrow(sys2) == 8) {
+  sys2 <- sys2 |> 
+    {\(.) rbind(., data.frame(
+    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
+    Sys.info = c(as.character(getwd()), 
+                 as.character(packageVersion('rsconnect')), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾'))))}()
+
 } else {
-  sys2 %<>% rbind(., data.frame(
-  Category = 'Current time', 
-  Sys.info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST')))
+  sys1 <- sys1 |> 
+    {\(.) rbind(., data.frame(
+      Category = 'Current time', 
+      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))}()
 }
 
-cbind(sys1, sys2) %>% 
-  kable(caption = 'Additional session information:') %>% 
-  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
+sys <- cbind(sys1, sys2) |> 
+  {\(.)  
+    kbl(caption = 'Additional session information:') |> 
+    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive')) |> 
+    row_spec(0, background = 'DimGrey', color = 'yellow') |> 
+    column_spec(1, background = 'CornflowerBlue', color = 'red') |> 
+    column_spec(2, background = 'grey', color = 'black') |> 
+    column_spec(3, background = 'CornflowerBlue', color = 'blue') |> 
+    column_spec(4, background = 'grey', color = 'white') |> 
+    row_spec(11, bold = TRUE, color = 'yellow', background = '#D7261E')}()
 
 rm(sys1, sys2)
+sys
 ```
 
 ## Reference

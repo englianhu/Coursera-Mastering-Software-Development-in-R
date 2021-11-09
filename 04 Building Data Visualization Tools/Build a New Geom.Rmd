@@ -163,7 +163,7 @@ rm(pkgs)
 
 ## Summary
 
-![](figure/04 Building Data Visualization Tools.png)
+![Awarded on `06 Aug 2021`](figure/04 Building Data Visualization Tools.png)
 
 ## Final Conclude
 
@@ -178,14 +178,13 @@ options(warn = 0)
 
 ## Documenting File Creation 
 
-- File creation date: 2018-08-28
+- File creation date: 2021-07-27
 - File latest updated date: `r today('Asia/Tokyo')`
 - `r R.version.string`
-- R version (short form): `r getRversion()`
-- [**rmarkdown** package](https://github.com/rstudio/rmarkdown) version: `r packageVersion('rmarkdown')`
-- File version: 1.0.1
-- Author Profile: [®γσ, Eng Lian Hu](https://beta.rstudioconnect.com/content/4352/)
-- GitHub: [Source Code](https://github.com/englianhu/binary.com-interview-question)
+- [rmarkdown](https://github.com/rstudio/rmarkdown) package version: `r packageVersion('rmarkdown')`
+- File version: 0.2.1
+- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
+- GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
 - Additional session information:
 
 ```{r info, warning = FALSE, results = 'asis'}
@@ -204,25 +203,31 @@ sys2 <- data.frame(Sys.info()) |>
     {\(.) data.frame(Category = row.names(.), Sys.info = .[,1])}()
 
 if (nrow(sys1) == 11 & nrow(sys2) == 8) {
-  sys2 %<>% rbind(., data.frame(
-  Category = c('rmarkdown', 'rsconnect', 'Current time'), 
-  Sys.info = c(as.character(packageVersion('rmarkdown')), as.character(packageVersion('rsconnect')),  paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾'))))
-  
+  sys2 <- sys2 |> 
+    {\(.) rbind(., data.frame(
+    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
+    Sys.info = c(as.character(getwd()), 
+                 as.character(packageVersion('rsconnect')), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾'))))}()
+
 } else {
-  sys1 %<>% rbind(., data.frame(
-  Category = 'Current time', 
-  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))
+  sys1 <- sys1 |> 
+    {\(.) rbind(., data.frame(
+      Category = 'Current time', 
+      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))}()
 }
 
-sys <- cbind(sys1, sys2) %>% 
-  kbl(caption = 'Additional session information:') %>% 
-  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive')) %>% 
-  row_spec(0, background = 'DimGrey', color = 'yellow') %>% 
-  column_spec(1, background = 'CornflowerBlue', color = 'red') %>% 
-  column_spec(2, background = 'grey', color = 'black') %>% 
-  column_spec(3, background = 'CornflowerBlue', color = 'blue') %>% 
-  column_spec(4, background = 'grey', color = 'white') %>% 
-  row_spec(11, bold = TRUE, color = 'yellow', background = '#D7261E')
+sys <- cbind(sys1, sys2) |> 
+  {\(.)  
+    kbl(caption = 'Additional session information:') |> 
+    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive')) |> 
+    row_spec(0, background = 'DimGrey', color = 'yellow') |> 
+    column_spec(1, background = 'CornflowerBlue', color = 'red') |> 
+    column_spec(2, background = 'grey', color = 'black') |> 
+    column_spec(3, background = 'CornflowerBlue', color = 'blue') |> 
+    column_spec(4, background = 'grey', color = 'white') |> 
+    row_spec(11, bold = TRUE, color = 'yellow', background = '#D7261E')}()
+
 rm(sys1, sys2)
 sys
 ```

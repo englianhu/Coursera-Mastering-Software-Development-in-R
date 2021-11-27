@@ -314,7 +314,7 @@ if (nrow(sys1) == 11 & nrow(sys2) == 8) {
       Category = 'Current time', 
       session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))}()
 }
-
+```
 sys <- cbind(sys1, sys2) |> 
   {\(.)  
     kbl(caption = 'Additional session information:') |> 

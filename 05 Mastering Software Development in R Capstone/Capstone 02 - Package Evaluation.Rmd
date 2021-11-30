@@ -308,9 +308,8 @@ options(warn = 0)
 - GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
 - Additional session information:
 
-```{r info, warning = FALSE, results = 'asis'}
-suppressMessages(require('dplyr', quietly = TRUE))
-suppressMessages(require('magrittr', quietly = TRUE))
+
+```{r info, warning=FALSE, error=TRUE, results='asis'}
 suppressMessages(require('formattable', quietly = TRUE))
 suppressMessages(require('knitr', quietly = TRUE))
 suppressMessages(require('kableExtra', quietly = TRUE))
@@ -329,25 +328,32 @@ if (nrow(sys1) == 11 & nrow(sys2) == 8) {
     Category = c('rmarkdown', 'rsconnect', 'Current time'), 
     Sys.info = c(as.character(getwd()), 
                  as.character(packageVersion('rsconnect')), 
-                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾'))))}()
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
 
 } else {
   sys1 <- sys1 |> 
     {\(.) rbind(., data.frame(
       Category = 'Current time', 
-      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))}()
+      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏')))}()
 }
 
 sys <- cbind(sys1, sys2) |> 
-  {\(.)  
-    kbl(caption = 'Additional session information:') |> 
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive')) |> 
-    row_spec(0, background = 'DimGrey', color = 'yellow') |> 
-    column_spec(1, background = 'CornflowerBlue', color = 'red') |> 
-    column_spec(2, background = 'grey', color = 'black') |> 
-    column_spec(3, background = 'CornflowerBlue', color = 'blue') |> 
-    column_spec(4, background = 'grey', color = 'white') |> 
-    row_spec(11, bold = TRUE, color = 'yellow', background = '#D7261E')}()
+  {\(.) 
+    kbl(., caption = 'Additional session information:')}() |> 
+  {\(.) 
+    kable_styling(., bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))}() |> 
+  {\(.) 
+    row_spec(., 0, background = 'DimGrey', color = 'yellow')}() |> 
+  {\(.) 
+    column_spec(., 1, background = 'CornflowerBlue', color = 'red')}() |> 
+  {\(.) 
+    column_spec(., 2, background = 'grey', color = 'black')}() |> 
+  {\(.) 
+    column_spec(., 3, background = 'CornflowerBlue', color = 'blue')}() |> 
+  {\(.) 
+    column_spec(., 4, background = 'grey', color = 'white')}() |> 
+  {\(.) 
+    row_spec(., 11, bold = TRUE, color = 'yellow', background = '#D7261E')}()
 
 rm(sys1, sys2)
 sys

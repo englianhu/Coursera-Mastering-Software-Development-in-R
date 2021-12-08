@@ -80,9 +80,9 @@ Kindly refer to <https://github.com/englianhu/JHU_MSDR_Capstone> and <https://gi
 
 There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course (folders inside repo).
 
-![Awarded on `08 Nov 2021`](figure/Coursera 05 - Mastering Software Development in R Capstone.png)
+![Awarded on `08 Nov 2021`](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/master/figure/Coursera%2005%20-%20Mastering%20Software%20Development%20in%20R%20Capstone.png)
 
-Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](Coursera 05 - Mastering Software Development in R Capstone.pdf).
+Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/4f84a1994bc13d5fdc609f02da622c2ad603ed39/Coursera%2005%20-%20Mastering%20Software%20Development%20in%20R%20Capstone.pdf).
 
 ## Reference
 

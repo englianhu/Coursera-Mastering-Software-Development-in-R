@@ -23,6 +23,8 @@ output:
 <audio controls loop autoplay src="music/踩着三轮车卖菜的老阿伯 - Chorus.mp3" controls></audio>
 <br>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Kyl6IgewKMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ------
 
 # Setting
@@ -110,6 +112,8 @@ Sys.setenv(TZ='Asia/Tokyo')
 options(warn=-1)
 rm(pkgs)
 ```
+
+<br><br>
 
 # Introduction
 
@@ -608,16 +612,26 @@ ans:1,2,3 (0.25/1 point)
 - `geom_scale()`
 - `scale_y_continuous()`
 
+# Assignment
+
+Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(previous [The `farsdata` R Package](https://github.com/englianhu/farsdata)) which is my R package repo for the assignment.
+
+<br><br>
+
 # Conclusion
 
 ![Awarded on `06 Aug 2021`](figure/04 Building Data Visualization Tools.png)
 
 <span style='color:blue'>**Final Scores :**</span> <span style='color:green'>`85.26/100`</span>
 
+Above `png` file and feel free to download [Coursera 04 - Building Data Visualization Tools.pdf](Coursera 04 - Building Data Visualization Tools.pdf).
+
 ```{r option, echo = FALSE}
 ## Set options back to original options
 options(warn = 0)
 ```
+
+<br><br>
 
 # Appendix
 

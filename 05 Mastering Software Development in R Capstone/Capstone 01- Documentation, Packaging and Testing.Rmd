@@ -1,7 +1,7 @@
 ---
 title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
-subtitle: "[Capstone](https://www.coursera.org/learn/r-capstone/home/welcome) <img src='figure/jhu.jpg' width='100'>"
-author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
+subtitle: "[Capstone - Assignment 01](https://www.coursera.org/learn/r-capstone/home/welcome) <img src='figure/jhu.jpg' width='100'>"
+author: "[®γσ, ξηg Lιαη Ημ](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> 🇪🇺® 新<img src='figure/xueba1.jpg' width='18'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
   html_document: 
@@ -20,7 +20,7 @@ output:
 <span style='color:green'>**Theme Song**</span>
 <br>
 
-<audio controls loop autoplay src="music/F4 - Can't Help Falling In Love With You (chorus).mp3" controls></audio>
+<audio controls loop autoplay src="music/踩着三轮车卖菜的老阿伯 - Chorus.mp3" controls></audio>
 <br>
 
 ------
@@ -97,65 +97,17 @@ knitr::opts_chunk$set(class.source = 'hover01', class.output = 'hover02', class.
 
 ## Setup
 
-```{r warning=FALSE, message=FALSE}
-if(!suppressPackageStartupMessages(require('BBmisc'))) {
-  install.packages('BBmisc', dependencies = TRUE, INSTALL_opts = '--no-lock')
-}
-suppressPackageStartupMessages(require('BBmisc'))
-# suppressPackageStartupMessages(require('rmsfuns'))
+```{r setup, error=TRUE}
+suppressPackageStartupMessages(library('BBmisc'))
 
-## load packages
-pkgs <- c('knitr', 'kableExtra', 'tint', 'dygraphs', 
-          'devtools','readr', 'lubridate', 'data.table', 'reprex', 
-          'feather', 'purrr', 'quantmod', 'tidyquant', 'plotly', 
-          'furrr', 'flyingfox', 'tidyr', 'jsonlite', 'MASS', 
-          'timetk', 'plyr', 'dplyr', 'stringr', 'magrittr',
-          'tdplyr', 'tidyverse', 'memoise', 'htmltools', 
-          'formattable', 'rbokeh', 'dash', 'dashCoreComponents', 
-          'dashHtmlComponents', 'dtplyr', 'viridis', 'hrbrthemes', 
-          ##https://dashr.plotly.com
-          'zoo', 'forecast', 'seasonal', 'seasonalview', 'rjson', 
-          'rugarch', 'rmgarch', 'mfGARCH', 'sparklyr', 'jcolors', 
-          'microbenchmark', 'dendextend', 'lhmetools', 'ggthemr', 
-          'stringr', 'pacman', 'profmem', 'ggthemes', 'paletteer', 
-          'htmltools', 'echarts4r', 'tsibble', 'fable', 
-          'fabletools', 'tsibbledata', 'tibbletime', 'feasts', 
-          'fpp3', 'prophet', 'fasster', 'fpp3', 'MASS', 
-          'fable.prophet')
-
-# remotes::install_github("robjhyndman/fpp3-package")
-# https://tidyverts.github.io/tidy-forecasting-principles/tsibble.html
-# https://facebook.github.io/prophet/docs/quick_start.html
-# https://github.com/mpiktas/midasr
-# https://github.com/onnokleen/mfGARCH
-# devtools::install_github("business-science/tibbletime")
-# devtools::install_github("DavisVaughan/furrr")
-
+pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'tidyquant', 'stringr', 'magrittr', 'tidyverse', 'plyr', 'dplyr', 'broom', 'highcharter', 'formattable', 'DT', 'httr', 'openxlsx')
 suppressAll(lib(pkgs))
-# load_pkg(pkgs)
 
-## Set the timezone but not change the datetime
-Sys.setenv(TZ = 'Asia/Tokyo')
-## options(knitr.table.format = 'html') will set all kableExtra tables to be 'html', otherwise need to set the parameter on every single table.
-options(warn = -1, knitr.table.format = 'html')#, digits.secs = 6)
+#funs <- c('')
+#l_ply(funs, function(x) source(paste0('./function/', x)))
 
-suppressAll(lib(pkgs))
-# load_pkg(pkgs)
-
-## Set the timezone but not change the datetime
-Sys.setenv(TZ = 'Asia/Tokyo')
-## options(knitr.table.format = 'html') will set all kableExtra tables to be 'html', otherwise need to set the parameter on every single table.
-options(warn = -1, knitr.table.format = 'html')#, digits.secs = 6)
-
-## https://stackoverflow.com/questions/39417003/long-vectors-not-supported-yet-abnor-in-rmd-but-not-in-r-script
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)#, 
-                      #cache = TRUE, cache.lazy = FALSE)
-
-## https://www.researchgate.net/post/How_to_solve_abnor_cannot_allocate_vector_of_size_12_Gb_in_R
-#memory.size() ### Checking your memory size
-#memory.limit() ## Checking the set limit
-#memory.size(size=500000)
-#memory.limit(size=56000) ### expanding your memory _ here it goes beyond to your actually memory. This 56000 is proposed for 64Bit.
+Sys.setenv(TZ='Asia/Tokyo')
+options(warn=-1)
 rm(pkgs)
 ```
 
@@ -191,8 +143,8 @@ Commit your package to GitHub after you've added documentation and tests for you
 
 # My Assignment
 
-<https://github.com/englianhu/JHU_MSDR_Capstone>
-<https://github.com/englianhu/MSDRCapstone>
+- <https://github.com/englianhu/JHU_MSDR_Capstone>
+- <https://github.com/englianhu/MSDRCapstone>
 
 <br><br>
 
@@ -263,6 +215,10 @@ Is every function in the package demonstrated in the vignette?
 
 ![Awarded on `08 Nov 2021`](figure/Coursera 05 - Mastering Software Development in R Capstone.png)
 
+<span style='color:blue'>**Final Scores :**</span> <span style='color:green'>`100/100`</span>
+
+Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](Coursera 05 - Mastering Software Development in R Capstone.pdf).
+
 ```{r opt, echo = FALSE}
 ## Set options back to original options
 options(warn = 0)
@@ -281,10 +237,9 @@ options(warn = 0)
 - `r R.version.string`
 - [rmarkdown](https://github.com/rstudio/rmarkdown) package version: `r packageVersion('rmarkdown')`
 - File version: 0.2.1
-- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
+- Author Profile: [®γσ, ξηg Lιαη Ημ](https://github.com/scibrokes/owner)
 - GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
 - Additional session information:
-
 
 ```{r info, warning=FALSE, error=TRUE, results='asis'}
 suppressMessages(require('formattable', quietly = TRUE))
@@ -299,6 +254,7 @@ sys1 <- devtools::session_info()$platform |>
 sys2 <- data.frame(Sys.info()) |> 
     {\(.) data.frame(Category = row.names(.), Sys.info = .[,1])}()
 
+#remarks, dim(sys1), dim(sys2)
 if (nrow(sys1) == 11 & nrow(sys2) == 8) {
   sys2 <- sys2 |> 
     {\(.) rbind(., data.frame(
@@ -306,12 +262,16 @@ if (nrow(sys1) == 11 & nrow(sys2) == 8) {
     Sys.info = c(as.character(getwd()), 
                  as.character(packageVersion('rsconnect')), 
                  paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
-
-} else {
-  sys1 <- sys1 |> 
+  
+} else if (nrow(sys1) == 10 & nrow(sys2) == 8) {
+  sys1 %<>% rbind(., data.frame(Category = '', session_info = ''))
+  
+  sys2 <- sys2 |> 
     {\(.) rbind(., data.frame(
-      Category = 'Current time', 
-      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏')))}()
+    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
+    Sys.info = c(as.character(getwd()), 
+                 as.character(packageVersion('rsconnect')), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
 }
 
 sys <- cbind(sys1, sys2) |> 
@@ -338,10 +298,4 @@ sys
 
 ## Reference
 
-1) [High-Performance Time Series Forecasting in R & Python](https://www.youtube.com/watch?v=elQb4VzRINg)
-
-2) [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3)
-
----
-
-<span style='color:RoyalBlue'>**Powered by - Copyright® Intellectual Property Rights of <img src='figure/Scibrokes.png' width='24'> [Sςιβrοκεrs Trαdιηg®️](http://www.scibrokes.com)経営企業**</span>
+01. [Mastering Software Development in R (web-base)](https://bookdown.org/rdpeng/RProgDA/). (or [Mastering Software Development in R.pdf](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/blob/master/reference/Mastering%20Software%20Development%20in%20R.pdf))

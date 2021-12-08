@@ -1,7 +1,7 @@
 ---
 title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
 subtitle: "[Building R Packages](https://www.coursera.org/learn/r-packages) <img src='figure/jhu.jpg' width='100'>"
-author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
+author: "[®γσ, ξηg Lιαη Ημ](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'>🇪🇺® 新<img src='figure/xueba1.jpg' width='18'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
   html_document: 
@@ -20,7 +20,7 @@ output:
 <span style='color:green'>**Theme Song**</span>
 <br>
 
-<audio controls loop autoplay src="music/F4 - Can't Help Falling In Love With You (chorus).mp3" controls></audio>
+<audio controls loop autoplay src="music/踩着三轮车卖菜的老阿伯 - Chorus.mp3" controls></audio>
 <br>
 
 ------
@@ -183,7 +183,7 @@ options(warn = 0)
 - `r R.version.string`
 - [rmarkdown](https://github.com/rstudio/rmarkdown) package version: `r packageVersion('rmarkdown')`
 - File version: 0.2.1
-- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
+- Author Profile: [®γσ, ξηg Lιαη Ημ](https://github.com/scibrokes/owner)
 - GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
 - Additional session information:
 
@@ -200,6 +200,7 @@ sys1 <- devtools::session_info()$platform |>
 sys2 <- data.frame(Sys.info()) |> 
     {\(.) data.frame(Category = row.names(.), Sys.info = .[,1])}()
 
+#remarks, dim(sys1), dim(sys2)
 if (nrow(sys1) == 11 & nrow(sys2) == 8) {
   sys2 <- sys2 |> 
     {\(.) rbind(., data.frame(
@@ -207,12 +208,16 @@ if (nrow(sys1) == 11 & nrow(sys2) == 8) {
     Sys.info = c(as.character(getwd()), 
                  as.character(packageVersion('rsconnect')), 
                  paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
-
-} else {
-  sys1 <- sys1 |> 
+  
+} else if (nrow(sys1) == 10 & nrow(sys2) == 8) {
+  sys1 %<>% rbind(., data.frame(Category = '', session_info = ''))
+  
+  sys2 <- sys2 |> 
     {\(.) rbind(., data.frame(
-      Category = 'Current time', 
-      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏')))}()
+    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
+    Sys.info = c(as.character(getwd()), 
+                 as.character(packageVersion('rsconnect')), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
 }
 
 sys <- cbind(sys1, sys2) |> 
@@ -240,5 +245,4 @@ sys
 ## Reference
 
 1) [High-Performance Time Series Forecasting in R & Python](https://www.youtube.com/watch?v=elQb4VzRINg)
-
 2) [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3)

@@ -1,7 +1,7 @@
 ---
 title: "<img src='figure/coursera.jpg' width='100'> [Coursera](https://www.coursera.org) - An Online Learning Platform"
 subtitle: "[Plotting with ggplot2](https://www.coursera.org/learn/r-data-visualization) <img src='figure/jhu.jpg' width='100'>"
-author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> ® 新<img src='figure/xueba1.jpg' width='14'>"
+author: "[®γσ, ξηg Lιαη Ημ](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='13'> <img src='figure/RYU.jpg' width='15'> <img src='figure/ENG.jpg' width='24'> 🇪🇺® 新<img src='figure/xueba1.jpg' width='18'>"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
   html_document: 
@@ -20,7 +20,7 @@ output:
 <span style='color:green'>**Theme Song**</span>
 <br>
 
-<audio controls loop autoplay src="music/F4 - Can't Help Falling In Love With You (chorus).mp3" controls></audio>
+<audio controls loop autoplay src="music/踩着三轮车卖菜的老阿伯 - Chorus.mp3" controls></audio>
 <br>
 
 ------
@@ -97,7 +97,7 @@ knitr::opts_chunk$set(class.source = 'hover01', class.output = 'hover02', class.
 
 ## Setup
 
-```{r setup}
+```{r setup, error=TRUE}
 suppressPackageStartupMessages(library('BBmisc'))
 
 pkgs <- c('knitr', 'kableExtra', 'devtools', 'lubridate', 'data.table', 'tidyquant', 'stringr', 'magrittr', 'tidyverse', 'plyr', 'dplyr', 'broom', 'highcharter', 'formattable', 'DT', 'httr', 'openxlsx')
@@ -106,6 +106,7 @@ suppressAll(lib(pkgs))
 #funs <- c('')
 #l_ply(funs, function(x) source(paste0('./function/', x)))
 
+Sys.setenv(TZ='Asia/Tokyo')
 options(warn=-1)
 rm(pkgs)
 ```
@@ -190,7 +191,7 @@ Kindly refer to manual [Mastering Software Development in R (web-base)](https://
 
 Kindly refer to [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r) to know the whole courses for the R specialization.
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, error=TRUE}
 # 1:  <- ''
 # 2:  <- ''
 # 3:  <- ''
@@ -333,9 +334,11 @@ Kindly refer to [Mastering Software Development in R Specialization](https://www
   - <span style='color:green'>**data frame**</span>
   - geom
 
+<br>
+
 2. You run the following code and get the error printed directly after the code:
 
-```
+```{r error=TRUE}
 library(ggplot2) 
 library(faraway) 
 data(nepali) 
@@ -354,26 +357,28 @@ ggplot(nepali, aes(x = ht, y = wt))
 
 What happened?
 
-Because you put the + at the start of the second line, instead of at the end of the first line, R thought the call was over and tried to run the first line by itself, and then tried to run the second line by itself, without an associated ggplot object.
+Because you put the `+` at the start of the second line, instead of at the end of the first line, R thought the call was over and tried to run the first line by itself, and then tried to run the second line by itself, without an associated `ggplot` object.
 
-  - The nepali dataset lacks one or both of the two columns `(ht, wt)` that you - used in the aes statement of the call.
+  - The `nepali` dataset lacks one or both of the two columns `(ht, wt)` that you - used in the `aes` statement of the call.
   - You are trying to create a scatterplot for a categorical variable.
   - You have not yet loaded the nepali data frame.
 
-ans: 3
-ans: 2
-ans: 1
-ans: 4
+    ans: 3
+    ans: 2
+    ans: 1
+    ans: 4
 
-3. You have a dataset of observations on study subjects which has height and weight for each subject measured at multiple time points. You want to create a scatterplot of height `(x-axis)` by weight `(y-axis)`. Since there are multiple measurements per subject, you would like to plot the measurements for each subject in a separate color. There is a column in the data called id that gives the unique id of each study subject; this column currently has the class “numeric”.
+<br>
+
+3. You have a dataset of observations on study subjects which has height and weight for each subject measured at multiple time points. You want to create a `scatterplot` of height `(x-axis)` by weight `(y-axis)`. Since there are multiple measurements per subject, you would like to plot the measurements for each subject in a separate color. There is a column in the data called id that gives the unique id of each study subject; this column currently has the class “numeric”.
 
 Which of the following choices is a good strategy for creating a plot where data points use color to identify the subject?
 
-  - Convert the id column of the data frame to a factor, so a discrete color palette will be used, then use ggplot to create a scatterplot and specify `color = id` as the sole argument in the `geom_point()` call.
+  - Convert the id column of the data frame to a factor, so a discrete color palette will be used, then use ggplot to create a `scatterplot` and specify `color = id` as the sole argument in the `geom_point()` call.
 
 Example code:
 
-```
+```{r error=TRUE}
 df %>% 
   mutate(id = factor(id)) %>%
   ggplot(aes(x = height, y = weight)) + 
@@ -384,7 +389,7 @@ df %>%
 
 Example code:
 
-```
+```{r error=TRUE}
 df %>%
   ggplot(aes(x = height, y = weight)) + 
   geom_point() + 
@@ -395,7 +400,7 @@ df %>%
 
 Example code:
 
-```
+```{r error=TRUE}
 df %>% 
   mutate(id = factor(id)) %>%
   ggplot(aes(x = height, y = weight, color = id)) + 
@@ -406,7 +411,7 @@ df %>%
 
 Example code:
 
-```
+```{r error=TRUE}
 df %>% 
   mutate(id = factor(id)) %>%
   ggplot(aes(x = height, y = weight, color = id)) + 
@@ -414,7 +419,10 @@ df %>%
 ```
 
 ans: 1
+
 ans: 2
+
+<br>
 
 4. You want to save a figure from R as a pdf file named "MyFig.pdf". Which of the following describes the proper steps to take?
 
@@ -422,7 +430,7 @@ First run all your code to create the figure, then run `pdf("MyFig.pdf")` to ope
 
 Example code:
 
-```
+```{r error=TRUE}
 ggplot(df, aes(x = x, y = y)) + 
   geom_point()
 pdf("MyFig.pdf")
@@ -433,7 +441,7 @@ Wrap all your code to create the figure in a pdf statement.
 
 Example code:
 
-```
+```{r error=TRUE}
 ggplot(df, aes(x = x, y = y)) + 
   geom_point()
 pdf("MyFig.pdf")
@@ -444,7 +452,7 @@ First run `dev.on("MyFig.pdf")` to open a pdf device, then run all your code to 
 
 Example code:
 
-```
+```{r error=TRUE}
 dev.on("MyFig.pdf")
 ggplot(df, aes(x = x, y = y)) + 
   geom_point()
@@ -454,7 +462,7 @@ First run `pdf("MyFig.pdf")` to open a pdf device, then run all your code to cre
 
 Example code:
 
-```
+```{r error=TRUE}
 dev.on("MyFig.pdf")
 ggplot(df, aes(x = x, y = y)) + 
   geom_point()
@@ -462,11 +470,14 @@ dev.off()
 ```
 
 ans: 1
+
 ans: 2
+
+<br>
 
 5. Consider the following dataset.
 
-```
+```{r, error=TRUE}
 library(lattice)
 data(barley)
 head(barley)
@@ -485,8 +496,12 @@ Which ggplot2 expression would make a scatterplot of year and yield while colori
 - `ggplot(data = barley, aes(year, yield)) + geom_point(color = variety)`
 
 ans: 2
+
 ans: 4
+
 ans: 3
+
+<br>
 
 6. Consider the following dataset.
 
@@ -495,62 +510,65 @@ You want to create a scatter plot showing Girth on the `x-axis`, Height on the `
 Which of the following code would create that plot?
 
 - 
-```
+```{r, error=TRUE}
 trees %>%
   ggplot() +
   geom_point(aes(x = Girth, y = Height, size = Volume))
 ```
 
 - 
-```
+```{r, error=TRUE}
 trees %>%
   ggplot(aes(x = Girth, y = Height)) +
   geom_point(size = Volume)
 ```
 
 - 
-```
+```{r, error=TRUE}
 trees %>%
   ggplot(aes(x = Girth, y = Height, size = Volume))
 ```
 
 - 
-```
+```{r, error=TRUE}
 trees %>%
   ggplot(aes(x = Girth, y = Height, size = Volume)) +
   geom_point()
 ```
 
 - 
-```
+```{r, error=TRUE}
 ggplot() +
   geom_point(trees,
              aes(x = Girth, y = Height, size = Volume))
 ```
 
 - 
-```
+```{r, error=TRUE}
 trees %>%
   ggplot(aes(x = Girth, y = Height)) +
   geom_point(aes(size = Volume))
 ```
 
 - 
-```
+```{r, error=TRUE}
 trees %>%
   ggplot(aes(x = Girth, y = Height)) +
   geom_point(aes(size = Volume))
 ```
 
 - 
-```
+```{r, error=TRUE}
 ggplot() +
   geom_point(data = trees,
              aes(x = Girth, y = Height, size = Volume))
 ```
 
 ans:2,3,4,5 (0.13/1 point)
+
 ans:2,4,5 (0.25/1 point)
+
+<br>
 
 7. How can you create small multiples using `ggplot2`?
 
@@ -560,7 +578,10 @@ ans:2,4,5 (0.25/1 point)
 - Add facet_wrap to the geom, specifying the formula to use for faceting
 
 ans:2,3 (0.50 / 1point)
+
 ans:1,2,3 (0.25/1 point)
+
+<br>
 
 8. What does `geom_smooth(method = "lm")` do when it is added to a `ggplot` object?
 
@@ -569,6 +590,8 @@ ans:1,2,3 (0.25/1 point)
 - It adds a nonlinear smoother to the plot
 - <span style='color:green'>**It adds a fitted linear regression line to the plot**</span>
 
+<br>
+
 9. When plotting multiple panels using faceting for a single variable, what controls the order in which the panels are plotted?
 
 - Panels are ordered by the number of data points in each panel
@@ -576,7 +599,9 @@ ans:1,2,3 (0.25/1 point)
 - Panels are ordered randomly
 - The order of panels must be specified by the user
 
-10. What function would you use to limit the range of the x-axis in a scatterplot?
+<br>
+
+10. What function would you use to limit the range of the `x-axis` in a scatterplot?
 
 - <span style='color:green'>**`scale_x_continuous()`**</span>
 - `scale()`
@@ -587,7 +612,7 @@ ans:1,2,3 (0.25/1 point)
 
 ![Awarded on `06 Aug 2021`](figure/04 Building Data Visualization Tools.png)
 
-Final Scores : `xx/100`
+<span style='color:blue'>**Final Scores :**</span> <span style='color:green'>`85.26/100`</span>
 
 ```{r option, echo = FALSE}
 ## Set options back to original options
@@ -603,7 +628,7 @@ options(warn = 0)
 - `r R.version.string`
 - [rmarkdown](https://github.com/rstudio/rmarkdown) package version: `r packageVersion('rmarkdown')`
 - File version: 0.2.1
-- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
+- Author Profile: [®γσ, ξηg Lιαη Ημ](https://github.com/scibrokes/owner)
 - GitHub: [Source Code](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R)
 - Additional session information:
 
@@ -620,16 +645,25 @@ sys1 <- devtools::session_info()$platform |>
 sys2 <- data.frame(Sys.info()) |> 
     {\(.) data.frame(Category = row.names(.), Sys.info = .[,1])}()
 
-if (nrow(sys1) == 9 & nrow(sys2) == 8) {
-  sys1 <- sys1 |> 
-    {\(.) rbind(., data.frame(
-      Category = 'rsconnect', as.character(packageVersion('rsconnect'))))}()
-    
+#remarks, dim(sys1), dim(sys2)
+if (nrow(sys1) == 11 & nrow(sys2) == 8) {
   sys2 <- sys2 |> 
     {\(.) rbind(., data.frame(
-    Category = c('rmarkdown', 'Current time'), 
+    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
     Sys.info = c(as.character(getwd()), 
-                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}() }
+                 as.character(packageVersion('rsconnect')), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
+  
+} else if (nrow(sys1) == 10 & nrow(sys2) == 8) {
+  sys1 %<>% rbind(., data.frame(Category = '', session_info = ''))
+  
+  sys2 <- sys2 |> 
+    {\(.) rbind(., data.frame(
+    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
+    Sys.info = c(as.character(getwd()), 
+                 as.character(packageVersion('rsconnect')), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
+}
 
 sys <- cbind(sys1, sys2) |> 
   {\(.) 

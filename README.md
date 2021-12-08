@@ -7,7 +7,7 @@
 <!-- badges: start -->
 [![Jekyll site CI](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/jekyll.yml)
 
-macOS: [![R](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-macos.yaml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-macos.yaml) Ubuntu: [![R](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-ubuntu.yaml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-ubuntu.yaml)
+macOS: [![R](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-macos.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-macos.yml) Ubuntu: [![R](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-ubuntu.yml/badge.svg)](https://github.com/englianhu/Coursera-Mastering-Software-Development-in-R/actions/workflows/R-ubuntu.yml)
 <!-- badges: end -->
 
 ## Index

@@ -10,26 +10,26 @@ name: R
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: macos-latest
     strategy:
       matrix:
-        r-version: [3.5, 3.6]
+        r-version: ['4.1.2']
 
     steps:
       - uses: actions/checkout@v2
       - name: Set up R ${{ matrix.r-version }}
-        uses: r-lib/actions/setup-r@ffe45a39586f073cc2e9af79c4ba563b657dc6e3
+        uses: r-lib/actions/setup-r@v1
         with:
           r-version: ${{ matrix.r-version }}
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck"))
+          install.packages(c('BBmisc', 'tidyverse', 'remotes', 'rcmdcheck'))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check

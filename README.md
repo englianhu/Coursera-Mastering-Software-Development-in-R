@@ -31,6 +31,8 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 - http://swirlstats.com/scn/rpe.html
 - https://github.com/swirldev/The_R_Programming_Environment
 
+Certificate : [Coursera 01 - The R Programming Environment.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/cc7eb134e4335100d452b9e27cd1b504111f25b1/01%20The%20R%20Programming%20Environment/Coursera%2001%20-%20The%20R%20Programming%20Environment.pdf)
+
 ## Course 2 : Advanced R Programming
 
 - Week 1 : Welcome to Advanced R Programming
@@ -43,6 +45,8 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 - http://swirlstats.com/scn/arp.html
 - https://github.com/swirldev/Advanced_R_Programming
 
+Certificate : [Coursera 02 - Advanced R Programming.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/cc7eb134e4335100d452b9e27cd1b504111f25b1/02%20Advanced%20R%20Programming/Coursera%2002%20-%20Advanced%20R%20Programming.pdf)
+
 ## Course 3 : Building R Packages
 
 - Week 1 : Getting Started with R Packages
@@ -51,6 +55,8 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 - Week 4 : Continuous Integration and Cross Platform Development
 
 Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(previous [The `farsdata` R Package](https://github.com/englianhu/farsdata)) which is my R package repo for the assignment.
+
+Certificate : [Coursera 03 - Building R Packages.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/cc7eb134e4335100d452b9e27cd1b504111f25b1/03%20Building%20R%20Packages/Coursera%2003%20-%20Building%20R%20Packages.pdf)
 
 ## Course 4 : Building Data Visualization Tools
 
@@ -62,6 +68,8 @@ Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(p
 Kindly refer to [Specialization in R : 04 Plotting with ggplot2](https://rpubs.com/englianhu/plotting-with-ggplot2) for more details about the course (includes quiz and answer, materials, resource, assignment etc).
 
 Kindly refer to [GitHub `wk4package`](https://github.com/englianhu/wk4package)(previous [The `farsdata` R Package](https://github.com/englianhu/farsdata)) which is my R package repo for the assignment.
+
+Certificate : [Coursera 04 - Building Data Visualization Tools.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/cc7eb134e4335100d452b9e27cd1b504111f25b1/04%20Building%20Data%20Visualization%20Tools/Coursera%2004%20-%20Building%20Data%20Visualization%20Tools.pdf)
 
 ## Course 5 : Mastering Software Development in R Capstone
 

@@ -620,20 +620,16 @@ sys1 <- devtools::session_info()$platform |>
 sys2 <- data.frame(Sys.info()) |> 
     {\(.) data.frame(Category = row.names(.), Sys.info = .[,1])}()
 
-if (nrow(sys1) == 11 & nrow(sys2) == 8) {
-  sys2 <- sys2 |> 
-    {\(.) rbind(., data.frame(
-    Category = c('rmarkdown', 'rsconnect', 'Current time'), 
-    Sys.info = c(as.character(getwd()), 
-                 as.character(packageVersion('rsconnect')), 
-                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}()
-
-} else {
+if (nrow(sys1) == 9 & nrow(sys2) == 8) {
   sys1 <- sys1 |> 
     {\(.) rbind(., data.frame(
-      Category = 'Current time', 
-      session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏')))}()
-}
+      Category = 'rsconnect', as.character(packageVersion('rsconnect'))))}()
+    
+  sys2 <- sys2 |> 
+    {\(.) rbind(., data.frame(
+    Category = c('rmarkdown', 'Current time'), 
+    Sys.info = c(as.character(getwd()), 
+                 paste(as.character(lubridate::now('Asia/Tokyo')), 'JST 🌏'))))}() }
 
 sys <- cbind(sys1, sys2) |> 
   {\(.) 

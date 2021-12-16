@@ -217,7 +217,7 @@ Is every function in the package demonstrated in the vignette?
 
 <span style='color:blue'>**Final Scores :**</span> <span style='color:green'>`100/100`</span>
 
-Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/74837bb98262e6d0b0137ada30f8e6fd3b1c5ef2/05%20Mastering%20Software%20Development%20in%20R%20Capstone/Coursera%2005%20-%20Mastering%20Software%20Development%20in%20R%20Capstone.pdf).
+Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/88e27c691c0bd31474b4f5d70d27ea15c5c21c5a/05%20Mastering%20Software%20Development%20in%20R%20Capstone/Coursera%2005%20-%20Mastering%20Software%20Development%20in%20R%20Capstone.pdf).
 
 ```{r opt, echo = FALSE}
 ## Set options back to original options

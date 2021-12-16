@@ -12,8 +12,8 @@
 
 Specialization : [Mastering Software Development in R Specialization](https://www.coursera.org/specializations/r)
 
-- Course 1 : [The R Programming Environment](http://rpubs.com/englianhu/the-r-programming-environment)
-- Course 2 : [Advanced R Programming](http://rpubs.com/englianhu/advanced-r-programming)
+- Course 1 : [The R Programming Environment](https://www.coursera.org/learn/r-programming-environment)
+- Course 2 : [Advanced R Programming](https://www.coursera.org/learn/advanced-r)
 - Course 3 : [Building R Packages](https://www.coursera.org/learn/r-packages)
 - Course 4 : [Building Data Visualization Tools](https://www.coursera.org/learn/r-data-visualization)
 - Course 5 : [Mastering Software Development in R Capstone](https://www.coursera.org/learn/r-capstone)
@@ -32,6 +32,8 @@ There is a manual [Mastering Software Development in R.pdf](https://github.com/e
 - http://swirlstats.com/scn/rpe.html
 - https://github.com/swirldev/The_R_Programming_Environment
 
+Kindly refer to [The R Programming Environment](http://rpubs.com/englianhu/the-r-programming-environment) for more details about the course (includes quiz and answer, materials, resource, assignment etc).
+
 Certificate : [Coursera 01 - The R Programming Environment.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/cc7eb134e4335100d452b9e27cd1b504111f25b1/01%20The%20R%20Programming%20Environment/Coursera%2001%20-%20The%20R%20Programming%20Environment.pdf)
 
 ## Course 2 : Advanced R Programming
@@ -45,6 +47,8 @@ Certificate : [Coursera 01 - The R Programming Environment.pdf](https://raw.gith
 
 - http://swirlstats.com/scn/arp.html
 - https://github.com/swirldev/Advanced_R_Programming
+
+Kindly refer to [Advanced R Programming](http://rpubs.com/englianhu/advanced-r-programming) for more details about the course (includes quiz and answer, materials, resource, assignment etc).
 
 Certificate : [Coursera 02 - Advanced R Programming.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/cc7eb134e4335100d452b9e27cd1b504111f25b1/02%20Advanced%20R%20Programming/Coursera%2002%20-%20Advanced%20R%20Programming.pdf)
 

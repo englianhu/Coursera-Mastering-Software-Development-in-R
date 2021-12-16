@@ -85,7 +85,7 @@ Certificate : [Coursera 04 - Building Data Visualization Tools.pdf](https://raw.
 - Week 5 : Deployment
 - Week 6 : Final Assessment
 
-Kindly refer to [Specialization in R : 05 Capstone Assignment-1](https://rpubs.com/englianhu/MSDR-Capstone-Assignment-1) and [Specialization in R : 05 Capstone Assignment-2](https://rpubs.com/englianhu/845042) for more details about the course (includes quiz and answer, materials, resource, assignment etc).
+Kindly refer to [Specialization in R : 05 Capstone Assignment-1](https://rpubs.com/englianhu/MSDR-Capstone-Assignment-1) and [Specialization in R : 05 Capstone Assignment-2](https://rpubs.com/englianhu/848454) for more details about the course (includes quiz and answer, materials, resource, assignment etc).
 
 Kindly refer to <https://github.com/englianhu/JHU_MSDR_Capstone> and <https://github.com/englianhu/MSDRCapstone> which is my R package repositories for the assignment for more details.
 
@@ -93,9 +93,9 @@ Kindly refer to <https://github.com/englianhu/JHU_MSDR_Capstone> and <https://gi
 
 There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course (folders inside repo).
 
-![Awarded on `08 Nov 2021`](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/master/figure/Coursera%2005%20-%20Mastering%20Software%20Development%20in%20R%20Capstone.png)
+![Awarded on `08 Nov 2021`](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/master/figure/Mastering%20Software%20Development%20in%20R%20-%20Specialization.png)
 
-Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/4f84a1994bc13d5fdc609f02da622c2ad603ed39/Coursera%2005%20-%20Mastering%20Software%20Development%20in%20R%20Capstone.pdf).
+Above `png` file and feel free to download [Mastering Software Development in R - Specializatioin.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/4f84a1994bc13d5fdc609f02da622c2ad603ed39/Mastering%20Software%20Development%20in%20R%20-%20Specialization.pdf).
 
 ## Reference
 

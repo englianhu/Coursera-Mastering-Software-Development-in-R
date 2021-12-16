@@ -248,7 +248,7 @@ Please use this space to clarify any grading decisions that might need an explan
 
 <span style='color:blue'>**Final Scores :**</span> <span style='color:green'>`100/100`</span>
 
-Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](Coursera 05 - Mastering Software Development in R Capstone.pdf).
+Above `png` file and feel free to download [Coursera 05 - Mastering Software Development in R Capstone.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/74837bb98262e6d0b0137ada30f8e6fd3b1c5ef2/05%20Mastering%20Software%20Development%20in%20R%20Capstone/Mastering%20Software%20Development%20in%20R%20-%20Specialization.pdf).
 
 ```{r opt, echo = FALSE}
 ## Set options back to original options

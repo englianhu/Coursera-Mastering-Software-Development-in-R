@@ -1,7 +1,5 @@
 <img src='figure/coursera.jpg' width='74'> <img src='figure/jhu.jpg' width='240'>
 
----
-
 # Coursera Mastering Software Development in R
 
 <!-- badges: start -->
@@ -98,6 +96,17 @@ There have a `RMarkdown` file and also a copy of `pdf` and `png` format certific
 ![Awarded on `08 Nov 2021`](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/master/figure/Mastering%20Software%20Development%20in%20R%20-%20Specialization.png)
 
 Above `png` file and feel free to download [Mastering Software Development in R - Specializatioin.pdf](https://raw.githubusercontent.com/englianhu/Coursera-Mastering-Software-Development-in-R/f700b1869f3a95bf2b4fbf577f6c9c708b2f9dfc/Mastering%20Software%20Development%20in%20R%20-%20Specialization.pdf).
+
+## Coursera Verified Certificate
+
+Certificate of Specialization : [Mastering Software Development in R Specialization](https://www.coursera.org/account/accomplishments/specialization/certificate/KTF8BDLMBLQC)
+
+- Cert 1 : [The R Programming Environment](https://www.coursera.org/account/accomplishments/certificate/B4FEKWK27Q6R)
+- Cert 2 : [Advanced R Programming](https://www.coursera.org/account/accomplishments/certificate/W8FRFA3F5AYC)
+- Cert 3 : [Building R Packages](https://www.coursera.org/account/accomplishments/certificate/KKAPGXYJTL9Y)
+- Cert 4 : [Building Data Visualization Tools](https://www.coursera.org/account/accomplishments/certificate/K6EC87PF4AKD)
+- Cert 5 : [Mastering Software Development in R Capstone](https://www.coursera.org/account/accomplishments/certificate/W6XDFFQ62NDX)
+- University : [Johns Hopkins University](https://www.jhu.edu)
 
 ## Reference
 
